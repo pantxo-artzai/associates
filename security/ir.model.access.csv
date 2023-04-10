@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_associates_associate,Access Associates Associate,model_associates_associate,base.group_user,1,1,1,1
+access_associates_share,Access Associates Share,model_associates_share,base.group_user,1,1,1,1
+access_associates_dividend,Access Associates Dividend,model_associates_dividend,base.group_user,1,1,1,1
+access_associates_dashboard,Access Associates Dashboard,model_associates_dashboard,base.group_user,1,1,1,1

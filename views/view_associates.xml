@@ -1,0 +1,107 @@
+<odoo>
+    <data>
+        <!-- Vue tree "associates.associate" -->
+        <record model="ir.ui.view" id="view_associate_tree">
+            <field name="name">Associate Tree</field>
+            <field name="model">associates.associate</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="email"/>
+                    <field name="phone"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Vue kanban "associates.associate" -->
+        <record id="kanban_view" model="ir.ui.view">
+            <field name="name">Associates kanban</field>
+            <field name="model">associates.associate</field>
+            <field name="arch" type="xml">
+                <kanban class="o_kanban_mobile" archivable="false" js_class="crm_kanban" sample="1">
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_content oe_kanban_global_click">
+                                <div>
+                                    <strong class="o_kanban_record_title"><span><field name="name"/></span></strong>
+                                </div>
+                                <div>
+                                    <span class="o_kanban_record_subtitle"><field name="phone"/></span>
+                                </div>
+                                <div class="o_kanban_record_bottom">
+                                    <button/>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <!-- Vue formulaire "associates.associate" -->
+        <record model="ir.ui.view" id="view_associate_form">
+            <field name="name">Associate Form</field>
+            <field name="model">associates.associate</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                    </header>
+                    <sheet>
+                        <div name="button_box" position="inside">
+                            <button type="action" name="%(action_view_shares)d" string="Shares" icon="fa-money" class="oe_stat_button" context="{'default_associate_id': active_id}">
+                            <field name="share_count" string="Shares" widget="statinfo"/>
+                            </button>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="name" invisible="1"/>
+                                <field name="partner_id"/>
+                                <field name="email" readonly="1"/>
+                                <field name="phone" readonly="1"/>
+                                <field name="birth_date"/>
+                                <field name="gender"/>
+                                <field name="nationality"/>
+                                <field name="notes" widget="text"/>
+                            </group>
+                            <group>
+                                <field name="joining_date"/>
+                                <field name="membership_type"/>
+                                <field name="shares_amount"/>
+                                <field name="membership_end_date"/>
+                                <field name="membership_status"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                         <field name="message_ids"/>
+                    </div>                       
+                </form>
+            </field>
+        </record>
+
+        <!-- Menu "Associates" -->
+        <record id="menu_associates" model="ir.ui.menu">
+            <field name="name">Associates</field>
+            <field name="parent_id" ref="menu_associates_management"/>
+            <field name="action" ref="action_associate_form"/>
+            <field name="sequence">20</field>
+        </record>
+
+        <!-- Action associée au menu "Associates" -->
+        <record id="action_associate_form" model="ir.actions.act_window">
+            <field name="name">Associates</field>
+            <field name="res_model">associates.associate</field>
+            <field name="view_mode">tree,kanban,form</field>
+        </record>
+
+        <!-- Action associée au smart bouton "Shares" -->  
+        <record id="action_view_shares" model="ir.actions.act_window">
+            <field name="name">Shares</field>
+            <field name="res_model">associates.share</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        
+    </data>
+
+</odoo>

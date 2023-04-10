@@ -1,0 +1,62 @@
+<odoo>
+    <data>
+        <!-- Vue tree pour le modèle "associates.dividends" -->
+        <record model="ir.ui.view" id="view_dividends_tree">
+            <field name="name">Dividends Tree</field>
+            <field name="model">associates.dividend</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="display_name"/>
+                    <field name="value"/>
+                    <field name="associate_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Vue formulaire pour le modèle "associates.dividends" -->
+        <record model="ir.ui.view" id="view_dividends_form">
+            <field name="name">dividends Form</field>
+            <field name="model">associates.dividend</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="display_name"/>
+                            <field name="value"/>
+                            <field name="associate_id"/>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                         <field name="message_ids"/>
+                    </div>    
+                </form>
+            </field>
+        </record>
+
+        <!-- Définition de l'action associée au menu "dividends" -->
+        <record id="action_dividends_form" model="ir.actions.act_window">
+            <field name="name">Dividends</field>
+            <field name="res_model">associates.dividend</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Définition de l'action de création de dividends -->
+        <record id="action_create_dividends" model="ir.actions.act_window">
+            <field name="name">Create dividends</field>
+            <field name="res_model">associates.dividend</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <!-- Définition du menu "dividends" -->
+        <record id="menu_dividends" model="ir.ui.menu">
+            <field name="name">Dividends</field>
+            <field name="parent_id" ref="menu_associates_management"/>
+            <field name="action" ref="action_dividends_form"/>
+            <field name="sequence">40</field>
+        </record>
+    </data>
+</odoo>

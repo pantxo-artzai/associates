@@ -1,0 +1,7 @@
+<odoo>
+    <data>
+        <record id="menu_associates_management" model="ir.ui.menu">
+        <field name="name">Associates</field>
+        </record>
+    </data>
+</odoo>
