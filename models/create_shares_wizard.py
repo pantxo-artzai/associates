@@ -7,6 +7,7 @@ class CreateSharesWizard(models.TransientModel):
     associate_name = fields.Char(related="associate_id.name", string="Associate Name", readonly=True)
     share_count = fields.Integer(string="Number of Shares", required=True)
     share_value = fields.Float(string="Share Value", required=True)
+    subscription_date = fields.Date(string="Subscription Date")
 
     def create_shares(self):
         # Créer les parts pour l'associé
@@ -14,6 +15,7 @@ class CreateSharesWizard(models.TransientModel):
             self.env["associates.share"].create({
                 "associate_id": self.associate_id.id,
                 "value": self.share_value,
+                "subscription_date": self.subscription_date,
             })
 
         return {"type": "ir.actions.act_window_close"}

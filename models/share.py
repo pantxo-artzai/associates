@@ -9,10 +9,9 @@ class Share(models.Model):
     display_name = fields.Char(string='Share', compute='_compute_display_name')
     sequence = fields.Char(string='Share Reference', required=True, copy=False, readonly=True, default=lambda self: _('New'))
     associate_id = fields.Many2one(comodel_name='associates.associate', string='Associate', required=True)
-    number = fields.Integer(string='Share Number')
     value = fields.Float(string='Share Value')
-    total_value = fields.Float(string='Total Value')
     company_id = fields.Many2one(comodel_name='res.company', string='Company', default=lambda self: self.env.company)
+    subscription_date = fields.Date(string='Subscription Date')
 
     @api.model
 

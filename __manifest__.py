@@ -22,6 +22,7 @@
         'views/view_associates.xml',
         'views/view_shares.xml',
         'views/view_dividends.xml',
+        'views/view_shares_wizard_form.xml',
         'data/data.xml',
     ],
     'demo': [
