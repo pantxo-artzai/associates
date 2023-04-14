@@ -4,7 +4,7 @@ class CreateSharesWizard(models.TransientModel):
     _name = "associates.create_shares_wizard"
 
     associate_id = fields.Many2one("associates.associate", string="Associate")
-    associate_name = fields.Char(related="associate_id.name", string="Associate Name", readonly=True)
+    associate_name = fields.Char(related="associate_id.name", string="Associate Name")
     share_count = fields.Integer(string="Number of Shares", required=True)
     share_value = fields.Float(string="Share Value", required=True)
     subscription_date = fields.Date(string="Subscription Date")

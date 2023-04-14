@@ -37,6 +37,13 @@
                 </kanban>
             </field>
         </record>
+        
+        <!-- Action associée au smart bouton "Shares" -->  
+        <record id="action_view_shares" model="ir.actions.act_window">
+            <field name="name">Shares</field>
+            <field name="res_model">associates.share</field>
+            <field name="view_mode">tree,form</field>
+        </record>
 
         <!-- Vue formulaire "associates.associate" -->
         <record model="ir.ui.view" id="view_associate_form">
@@ -80,28 +87,6 @@
                     </div>                       
                 </form>
             </field>
-        </record>
-
-        <!-- Menu "Associates" -->
-        <record id="menu_associates" model="ir.ui.menu">
-            <field name="name">Associates</field>
-            <field name="parent_id" ref="menu_associates_management"/>
-            <field name="action" ref="action_associate_form"/>
-            <field name="sequence">20</field>
-        </record>
-
-        <!-- Action associée au menu "Associates" -->
-        <record id="action_associate_form" model="ir.actions.act_window">
-            <field name="name">Associates</field>
-            <field name="res_model">associates.associate</field>
-            <field name="view_mode">tree,kanban,form</field>
-        </record>
-
-        <!-- Action associée au smart bouton "Shares" -->  
-        <record id="action_view_shares" model="ir.actions.act_window">
-            <field name="name">Shares</field>
-            <field name="res_model">associates.share</field>
-            <field name="view_mode">tree,form</field>
         </record>
 
     </data>

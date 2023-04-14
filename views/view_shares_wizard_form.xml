@@ -16,7 +16,7 @@
             <field name="arch" type="xml">
                 <form>
                     <group>
-                        <field name="associate_id" invisible="1"/>
+                        <field name="associate_id"/>
                         <field name="associate_name"/>
                         <field name="share_count"/>
                         <field name="share_value"/>

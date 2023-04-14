@@ -13,5 +13,9 @@
             <field name="prefix">DIV/</field>
             <field name="padding">4</field>
         </record>
+
+        <record id="associates_dashboard_1" model="associates.dashboard">
+            <field name="name">1</field>
+        </record>
     </data>
 </odoo>
