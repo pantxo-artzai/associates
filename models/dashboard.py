@@ -5,3 +5,5 @@ class Dashboard(models.Model):
     _description = 'Dashboard'
 
     name = fields.Char(string='Name')
+    card_title = fields.Char(string='Card Title')
+    card_description = fields.Char(string='Card Description')

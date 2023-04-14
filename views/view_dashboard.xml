@@ -4,6 +4,7 @@
         <record id="view_dashboard_kanban" model="ir.ui.view">
             <field name="name">dashboard.kanban</field>
             <field name="model">associates.dashboard</field>
+
             <field name="arch" type="xml">
                 <kanban create="false" js_class="web_kanban.KanbanView">
                     <templates>
@@ -11,11 +12,12 @@
                             <div class="oe_kanban_global_click o_dashboard">
                                 <div class="o_dashboard_card">
                                     <div class="o_dashboard_card_header">
-                                        <h3>Create Shares</h3>
+                                        <h3><field name="card_title"/></h3>
                                     </div>
                                     <div class="o_dashboard_card_body">
-                                        <p>Create and manage shares for your associates.</p>
-                                        <button class="btn btn-primary" type="action" name="%(action_create_shares_wizard)d" string="Create Shares">
+                                        <p><field name="name"/></p>
+                                        <p><field name="card_description"/></p>
+                                        <button t-if="record.name.raw_value == '1'" class="btn btn-primary" type="action" name="%(action_create_shares_wizard)d" string="Create Shares">
                                         </button>
                                     </div>
                                 </div>

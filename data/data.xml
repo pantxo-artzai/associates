@@ -7,6 +7,7 @@
             <field name="prefix">SHARE/</field>
             <field name="padding">4</field>
         </record>
+
         <record id="associates_dividend_sequence" model="ir.sequence">
             <field name="name">dividend Sequence</field>
             <field name="code">associates.dividend.sequence</field>
@@ -16,6 +17,15 @@
 
         <record id="associates_dashboard_1" model="associates.dashboard">
             <field name="name">1</field>
+            <field name="card_title">Shares</field>
+            <field name="card_description">Manage shares</field>
         </record>
+
+        <record id="associates_dashboard_2" model="associates.dashboard">
+            <field name="name">2</field>
+            <field name="card_title">Dividends</field>
+            <field name="card_description">Manage dividends</field>
+        </record>
+
     </data>
 </odoo>
