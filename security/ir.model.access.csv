@@ -3,3 +3,4 @@ access_associates_associate,Access Associates Associate,model_associates_associa
 access_associates_share,Access Associates Share,model_associates_share,base.group_user,1,1,1,1
 access_associates_dividend,Access Associates Dividend,model_associates_dividend,base.group_user,1,1,1,1
 access_associates_dashboard,Access Associates Dashboard,model_associates_dashboard,base.group_user,1,1,1,1
+access_associates_create_shares_wizard,Access Associates Create_shares_wizard,model_associates_create_shares_wizard,base.group_user,1,1,1,1

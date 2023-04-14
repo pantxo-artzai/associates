@@ -45,6 +45,8 @@
             <field name="arch" type="xml">
                 <form>
                     <header>
+                            <button type="action" name="%(action_create_shares_wizard)d" string="Create Shares" context="{'default_associate_id': active_id}">
+                            </button>
                     </header>
                     <sheet>
                         <div name="button_box" position="inside">
@@ -74,7 +76,7 @@
                     </sheet>
                     <div class="oe_chatter">
                         <field name="message_follower_ids"/>
-                         <field name="message_ids"/>
+                        <field name="message_ids"/>
                     </div>                       
                 </form>
             </field>
@@ -101,7 +103,36 @@
             <field name="res_model">associates.share</field>
             <field name="view_mode">tree,form</field>
         </record>
-        
+
+        <!-- Action pour l'assistant de création de parts -->
+        <record id="action_create_shares_wizard" model="ir.actions.act_window">
+            <field name="name">Create Shares</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">associates.create_shares_wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <!-- Vue formulaire pour l'assistant de création de parts -->
+        <record model="ir.ui.view" id="view_create_shares_wizard_form">
+            <field name="name">Create Shares Wizard Form</field>
+            <field name="model">associates.create_shares_wizard</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="associate_id" invisible="1"/>
+                        <field name="associate_name"/>
+                        <field name="share_count"/>
+                        <field name="share_value"/>
+                    </group>
+                    <footer>
+                        <button name="create_shares" string="Create Shares" type="object" class="oe_highlight"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>   
+
     </data>
 
 </odoo>

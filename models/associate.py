@@ -49,14 +49,22 @@ class Associate(models.Model):
 
     @api.depends('share_ids')
     def _compute_share_count(self):
-        for record in self:
-            record.share_count = len(record.share_ids)
-
-    def _compute_share_count(self):
         for associate in self:
             associate.share_count = len(associate.share_ids)
 
     def action_view_shares(self):
         action = self.env.ref('associates.action_view_share').read()[0]
         action['domain'] = [('associate_id', 'in', self.ids)]
+        return action
+    
+    def create_shares(self):
+        # Récupérer l'action pour ouvrir le formulaire de création de parts
+        action = self.env.ref("associates.action_create_shares_wizard").read()[0]
+
+        # Transmettre l'ID de l'associé actuel à l'action
+        action["context"] = {
+            "default_associate_id": self.id,
+            "default_associate_name": self.name,
+        }
+
         return action

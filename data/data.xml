@@ -7,26 +7,11 @@
             <field name="prefix">SHARE/</field>
             <field name="padding">4</field>
         </record>
-        <record id="action_view_share" model="ir.actions.act_window">
-            <field name="name">Shares</field>
-            <field name="res_model">associates.share</field>
-            <field name="view_mode">tree,form</field>
-            <field name="domain">[('associate_id', 'in', [active_id])]</field>
-            <field name="context">{'default_associate_id': active_id}</field>
-        </record>
-
         <record id="associates_dividend_sequence" model="ir.sequence">
             <field name="name">dividend Sequence</field>
             <field name="code">associates.dividend.sequence</field>
             <field name="prefix">DIV/</field>
             <field name="padding">4</field>
-        </record>
-        <record id="action_view_dividend" model="ir.actions.act_window">
-            <field name="name">dividends</field>
-            <field name="res_model">associates.dividend</field>
-            <field name="view_mode">tree,form</field>
-            <field name="domain">[('associate_id', 'in', [active_id])]</field>
-            <field name="context">{'default_associate_id': active_id}</field>
         </record>
     </data>
 </odoo>
