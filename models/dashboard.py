@@ -7,3 +7,5 @@ class Dashboard(models.Model):
     name = fields.Char(string='Name')
     card_title = fields.Char(string='Card Title')
     card_description = fields.Char(string='Card Description')
+    button_title =  fields.Char(string='Button Title')
+    button_action = fields.Many2one('ir.actions.actions', string='Button Action')
