@@ -18,6 +18,7 @@
                     <group>
                         <field name="associate_id"/>
                         <field name="associate_name"/>
+                        <field name="share_type_id"/>
                         <field name="share_count"/>
                         <field name="share_value"/>
                         <field name="subscription_date"/>

@@ -8,7 +8,10 @@ class Associate(models.Model):
 
     name = fields.Char(string='Name')
     partner_id = fields.Many2one('res.partner', string='Related Contact', required=True)
+    company_id = fields.Many2one("res.company", string="Company", required=True, default=lambda self: self.env.company)
     share_ids = fields.One2many('associates.share', 'associate_id', string='Shares')
+    share_type_id = fields.Many2one('associates.share.type', string='Default share type', required=True)
+
     email = fields.Char(string='Email', related='partner_id.email')
     phone = fields.Char(string='Phone', related='partner_id.phone')
     address = fields.Char(string='Address')
@@ -34,7 +37,7 @@ class Associate(models.Model):
     ], string='Membership Status', default='active')
     notes = fields.Text(string='Notes')
     share_count = fields.Integer(string='Shares', compute='_compute_share_count')
-
+    share_percentage = fields.Float(string="Share Percentage", compute="_compute_share_percentage", store=True)
 
     @api.model
     def create(self, vals):
@@ -68,3 +71,13 @@ class Associate(models.Model):
         }
 
         return action
+    
+    @api.depends("share_ids", "company_id")
+    def _compute_share_percentage(self):
+        for associate in self:
+            total_shares = self.env["associates.share"].search_count([('company_id', '=', associate.company_id.id)])
+            associate_shares = len(associate.share_ids)
+            if total_shares > 0:
+                associate.share_percentage = (associate_shares / total_shares) * 100
+            else:
+                associate.share_percentage = 0.0

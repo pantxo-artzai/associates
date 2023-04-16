@@ -28,6 +28,8 @@
                             <field name="value"/>
                             <field name="subscription_date"/>
                             <field name="associate_id"/>
+                            <field name="share_type_id"/>
+                            
                         </group>
                     </sheet>
                     <div class="oe_chatter">
