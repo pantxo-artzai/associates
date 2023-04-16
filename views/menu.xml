@@ -70,5 +70,28 @@
             <field name="sequence">30</field>
         </record>
 
+        <!-- /// Settings /// -->
+        <!-- Menu principal settings -->
+        <record id="menu_associates_settings" model="ir.ui.menu">
+            <field name="name">Settings</field>
+            <field name="parent_id" ref="menu_associates_management"/>
+            <field name="sequence">1000</field>
+        </record>
+
+        <!-- Action associée au menu "Shares type" -->
+        <record id="action_shares_type" model="ir.actions.act_window">
+            <field name="name">Shares type</field>
+            <field name="res_model">associates.share.type</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Menu "Shares type" -->
+        <record id="menu_shares_type" model="ir.ui.menu">
+            <field name="name">Shares type</field>
+            <field name="parent_id" ref="menu_associates_settings"/>
+            <field name="action" ref="action_shares_type"/>
+            <field name="sequence">1100</field>
+        </record>
+
     </data>
 </odoo>

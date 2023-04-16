@@ -20,6 +20,7 @@
         'views/templates.xml',
         'views/view_shares_wizard_form.xml',
         'views/view_shares.xml',
+        'views/view_shares_type.xml',
         'views/view_dashboard.xml',
         'views/view_associates.xml',
         'views/view_dividends.xml',

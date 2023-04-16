@@ -12,6 +12,8 @@ class Share(models.Model):
     value = fields.Float(string='Share Value')
     company_id = fields.Many2one(comodel_name='res.company', string='Company', default=lambda self: self.env.company)
     subscription_date = fields.Date(string='Subscription Date')
+    share_type_id = fields.Many2one(comodel_name='associates.share.type', string='Share Type')
+
 
     @api.model
 
@@ -27,4 +29,13 @@ class Share(models.Model):
             name = "%s" % (record.sequence)
             result.append((record.id, name))
         return result
+
+class ShareType(models.Model):
+    _name = 'associates.share.type'
+    _description = 'Share Type'
+
+    name = fields.Char(string='Name', required=True)
+    description = fields.Text(string='Description')
+    country_id = fields.Many2one(comodel_name='res.country', string='Country')
+
 

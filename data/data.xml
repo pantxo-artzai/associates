@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
+        <!-- Configuration des numéros de séquence -->
         <record id="associates_share_sequence" model="ir.sequence">
             <field name="name">Share Sequence</field>
             <field name="code">associates.share.sequence</field>
@@ -15,6 +16,7 @@
             <field name="padding">4</field>
         </record>
 
+        <!-- Configuration des cartes du dashboard -->
         <record id="associates_dashboard_1" model="associates.dashboard">
             <field name="name">531</field>
             <field name="card_title">Shares</field>
@@ -31,5 +33,49 @@
             <field name="button_action" ref=""/>
         </record>
 
+        <!-- Configuration des types de parts -->
+        <record id="share_type_common" model="associates.share.type">
+            <field name="name">Actions ordinaires</field>
+            <field name="description">Les actions ordinaires : ce sont les actions les plus courantes, qui confèrent à leur détenteur des droits de vote lors des assemblées générales et un droit à une partie des bénéfices distribués sous forme de dividendes.</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+
+
+
+
+        <record id="share_type_preference" model="associates.share.type">
+            <field name="name">Actions de préférence</field>
+            <field name="description">Les actions de préférence : ces actions donnent des droits spécifiques à leurs détenteurs, tels que des droits de priorité sur les dividendes ou des droits de vote supplémentaires. Ces actions sont souvent émises pour des investisseurs particuliers ou institutionnels qui souhaitent avoir un contrôle accru sur l'entreprise.
+            </field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+
+        <record id="share_type_priority" model="associates.share.type">
+            <field name="name">Actions de priorité</field>
+            <field name="description">Les actions de priorité : ces actions donnent à leurs détenteurs un droit à une partie des bénéfices distribués sous forme de dividendes avant les actionnaires ordinaires. Toutefois, ces actions n'ont généralement pas de droit de vote.
+            </field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+
+        <record id="share_type_free" model="associates.share.type">
+            <field name="name">Actions gratuites</field>
+            <field name="description">Les actions gratuites : ce sont des actions qui sont émises gratuitement aux actionnaires existants en fonction du nombre d'actions qu'ils détiennent déjà. Ces actions ne peuvent être vendues pendant une période déterminée.
+            </field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+
+        <record id="share_type_performance" model="associates.share.type">
+            <field name="name">Actions de performance</field>
+            <field name="description">Les actions de performance : ces actions sont liées à la performance de l'entreprise ou à des objectifs spécifiques. Si l'entreprise atteint ses objectifs, les détenteurs de ces actions peuvent recevoir des dividendes ou voir leur valeur augmenter.
+            </field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+
+        <record id="share_type_absa" model="associates.share.type">
+            <field name="name">Actions à bons de souscription d'actions (ABSA)</field>
+            <field name="description">Les actions ordinaires : ce sont les actions les plus courantes, qui confèrent à leur détenteur des droits de vote lors des assemblées générales et un droit à une partie des bénéfices distribués sous forme de dividendes.
+            </field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
     </data>
 </odoo>
