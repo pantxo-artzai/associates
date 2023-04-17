@@ -7,10 +7,10 @@ class Associate(models.Model):
     _description = 'Associate'
 
     name = fields.Char(string='Name')
-    partner_id = fields.Many2one('res.partner', string='Related Contact', required=True)
-    company_id = fields.Many2one("res.company", string="Company", required=True, default=lambda self: self.env.company)
-    share_ids = fields.One2many('associates.share', 'associate_id', string='Shares')
-    share_type_id = fields.Many2one('associates.share.type', string='Default share type', required=True)
+    partner_id = fields.Many2one('res.partner', string='Related Contact', required=True, tracking=1)
+    company_id = fields.Many2one("res.company", string="Company", required=True, default=lambda self: self.env.company, tracking=1)
+    share_ids = fields.One2many('associates.share', 'associate_id', string='Shares', tracking=1)
+    share_type_id = fields.Many2one('associates.share.type', string='Default share type', required=True, tracking=1)
 
     email = fields.Char(string='Email', related='partner_id.email')
     phone = fields.Char(string='Phone', related='partner_id.phone')
@@ -22,13 +22,13 @@ class Associate(models.Model):
         ('other', 'Other')
     ], string='Gender')
     nationality = fields.Many2one('res.country', string='Nationality', required=True)
-    membership_start_date = fields.Date(string='Start date')
+    membership_start_date = fields.Date(string='Start date', tracking=1)
     shares_amount = fields.Float(string="Shares total amount", compute="_compute_shares_amount", store=True)
-    membership_end_date = fields.Date(string='End date')
+    membership_end_date = fields.Date(string='End date', tracking=1)
     notes = fields.Text(string='Notes')
-    share_count = fields.Integer(string='Shares', compute='_compute_share_count')
-    share_numbers = fields.Integer(string='Shares numbers', compute='_compute_share_count')
-    share_percentage = fields.Float(string="Share percentage", compute="_compute_share_percentage", store=True)
+    share_count = fields.Integer(string='Shares', compute='_compute_share_count',store=True, tracking=1)
+    share_numbers = fields.Integer(string='Shares numbers', compute='_compute_share_count',store=True, tracking=1)
+    share_percentage = fields.Float(string="Share percentage", compute="_compute_share_percentage", store=True, tracking=1)
 
     @api.model
     def create(self, vals):

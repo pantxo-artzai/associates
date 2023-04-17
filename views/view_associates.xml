@@ -37,7 +37,19 @@
                 </kanban>
             </field>
         </record>
-        
+
+        <!-- Vue graphique "associates.associate" -->
+        <record model="ir.ui.view" id="view_associate_graph">
+            <field name="name">Associate Graph</field>
+            <field name="model">associates.associate</field>
+            <field name="arch" type="xml">
+                <graph string="Associates" type="pie">
+                    <field name="name" type="row"/>
+                    <field name="share_count" type="measure"/>
+                </graph>
+            </field>
+        </record>
+
         <!-- Action associée au smart bouton "Shares" -->  
         <record id="action_view_shares" model="ir.actions.act_window">
             <field name="name">Shares</field>

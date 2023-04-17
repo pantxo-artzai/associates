@@ -8,7 +8,7 @@ class Share(models.Model):
 
     display_name = fields.Char(string='Share', compute='_compute_display_name')
     sequence = fields.Char(string='Share Reference', required=True, copy=False, readonly=True, default=lambda self: _('New'))
-    associate_id = fields.Many2one(comodel_name='associates.associate', string='Associate', required=True)
+    associate_id = fields.Many2one(comodel_name='associates.associate', string='Associate', required=True, tracking=1)
     value = fields.Float(string='Share Value')
     company_id = fields.Many2one(comodel_name='res.company', string='Company', default=lambda self: self.env.company)
     subscription_date = fields.Date(string='Subscription Date')

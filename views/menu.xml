@@ -27,7 +27,7 @@
         <record id="action_associate_form" model="ir.actions.act_window">
             <field name="name">Associates</field>
             <field name="res_model">associates.associate</field>
-            <field name="view_mode">tree,kanban,form</field>
+            <field name="view_mode">tree,kanban,form,graph</field>
         </record>
         
         <!-- Menu "Associates" -->
