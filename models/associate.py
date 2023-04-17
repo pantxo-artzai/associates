@@ -21,23 +21,14 @@ class Associate(models.Model):
         ('female', 'Female'),
         ('other', 'Other')
     ], string='Gender')
-    nationality = fields.Char(string='Nationality')
-    joining_date = fields.Date(string='Joining Date')
-    membership_type = fields.Selection([
-        ('regular', 'Regular'),
-        ('premium', 'Premium'),
-        ('lifetime', 'Lifetime')
-    ], string='Membership Type')
-    shares_amount = fields.Float(string='Share Amount')
-    membership_end_date = fields.Date(string='Membership End Date')
-    membership_status = fields.Selection([
-        ('active', 'Active'),
-        ('inactive', 'Inactive'),
-        ('pending', 'Pending')
-    ], string='Membership Status', default='active')
+    nationality = fields.Many2one('res.country', string='Nationality', required=True)
+    membership_start_date = fields.Date(string='Start date')
+    shares_amount = fields.Float(string="Shares total amount", compute="_compute_shares_amount", store=True)
+    membership_end_date = fields.Date(string='End date')
     notes = fields.Text(string='Notes')
     share_count = fields.Integer(string='Shares', compute='_compute_share_count')
-    share_percentage = fields.Float(string="Share Percentage", compute="_compute_share_percentage", store=True)
+    share_numbers = fields.Integer(string='Shares numbers', compute='_compute_share_count')
+    share_percentage = fields.Float(string="Share percentage", compute="_compute_share_percentage", store=True)
 
     @api.model
     def create(self, vals):
@@ -54,6 +45,7 @@ class Associate(models.Model):
     def _compute_share_count(self):
         for associate in self:
             associate.share_count = len(associate.share_ids)
+            associate.share_numbers = len(associate.share_ids)
 
     def action_view_shares(self):
         action = self.env.ref('associates.action_view_share').read()[0]
@@ -81,3 +73,9 @@ class Associate(models.Model):
                 associate.share_percentage = (associate_shares / total_shares) * 100
             else:
                 associate.share_percentage = 0.0
+
+    @api.depends("share_ids", "share_ids.value")
+    def _compute_shares_amount(self):
+        for associate in self:
+            shares_amount = sum(share.value for share in associate.share_ids)
+            associate.shares_amount = shares_amount

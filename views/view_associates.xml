@@ -62,7 +62,7 @@
                             </button>
                         </div>
                         <group>
-                            <group>
+                            <group string="Associate">
                                 <field name="name" invisible="1"/>
                                 <field name="partner_id"/>
                                 <field name="email" readonly="1"/>
@@ -70,16 +70,15 @@
                                 <field name="birth_date"/>
                                 <field name="gender"/>
                                 <field name="nationality"/>
+                                <field name="membership_start_date"/>
+                                <field name="membership_end_date"/>
                                 <field name="notes" widget="text"/>
                             </group>
-                            <group>
-                                <field name="joining_date"/>
-                                <field name="membership_type"/>
+                            <group string="Shares">
                                 <field name="share_type_id"/>
-                                <field name="shares_amount"/>
-                                <field name="membership_end_date"/>
-                                <field name="membership_status"/>
+                                <field name="share_numbers" readonly="1"/> 
                                 <field name="share_percentage" readonly="1"/>
+                                <field name="shares_amount" readonly="1"/>
                             </group>
                         </group>
                     </sheet>
