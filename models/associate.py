@@ -29,6 +29,15 @@ class Associate(models.Model):
     share_count = fields.Integer(string='Shares', compute='_compute_share_count',store=True, tracking=1)
     share_numbers = fields.Integer(string='Shares numbers', compute='_compute_share_count',store=True, tracking=1)
     share_percentage = fields.Float(string="Share percentage", compute="_compute_share_percentage", store=True, tracking=1)
+    usufructuary_ids = fields.Many2many("associates.associate", "associate_rel", "main_id", "other_id", string="Other Associates")
+    dividend_percentage = fields.Float(string="Dividend pourcetage", store=True)
+    type = fields.Selection([
+        ('full ownership', 'Full ownership'),
+        ('bare ownership', 'Bare ownership'),
+        ('other', 'Other')
+    ], string='Type')
+
+
 
     @api.model
     def create(self, vals):
@@ -79,3 +88,4 @@ class Associate(models.Model):
         for associate in self:
             shares_amount = sum(share.value for share in associate.share_ids)
             associate.shares_amount = shares_amount
+
