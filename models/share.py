@@ -29,6 +29,18 @@ class Share(models.Model):
             name = "%s" % (record.sequence)
             result.append((record.id, name))
         return result
+    
+    def update_associate(self):
+        # Ouverture du wizard pour sélectionner le nouvel associé
+        wizard_form_view = self.env.ref("associates.view_update_associate_wizard_form")
+        return {
+            "name": "Update Associate",
+            "type": "ir.actions.act_window",
+            "res_model": "associates.update_associate_wizard",
+            "views": [(wizard_form_view.id, "form")],
+            "target": "new",
+            "context": {"share_ids": self.ids},
+        }
 
 class ShareType(models.Model):
     _name = 'associates.share.type'
@@ -37,5 +49,4 @@ class ShareType(models.Model):
     name = fields.Char(string='Name', required=True)
     description = fields.Text(string='Description')
     country_id = fields.Many2one(comodel_name='res.country', string='Country')
-
 

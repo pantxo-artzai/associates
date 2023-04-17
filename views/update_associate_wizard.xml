@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_update_associate_wizard_form" model="ir.ui.view">
+            <field name="name">Update Associate Wizard Form</field>
+            <field name="model">associates.update_associate_wizard</field>
+            <field name="arch" type="xml">
+                <form string="Update Associate">
+                    <group>
+                        <field name="new_associate_id"/>
+                    </group>
+                    <footer>
+                        <button name="update_shares" string="Update" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>
