@@ -93,5 +93,22 @@
             <field name="sequence">1100</field>
         </record>
 
+        <!-- Action de fenêtre pour la gestion des numéros de séquence de parts et de dividendes -->
+        <record id="action_associates_share_sequence" model="ir.actions.act_window">
+            <field name="name">Sequences</field>
+            <field name="res_model">ir.sequence</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('code', 'in', ['associates.share.sequence', 'associates.dividend.sequence'])]</field>
+        </record>
+
+
+        <!-- Éléments de menu pour la gestion des numéros de séquence -->
+        <record id="menu_associates_share_sequence" model="ir.ui.menu">
+            <field name="name">Sequences</field>
+            <field name="parent_id" ref="menu_associates_settings"/>
+            <field name="action" ref="action_associates_share_sequence"/>
+            <field name="sequence">1200</field>
+        </record>
+
     </data>
 </odoo>
