@@ -95,7 +95,7 @@
                             </group>
                         </group>
                         <notebook>
-                        <page string="Usufructuaries">
+                        <page string="Usufructuaries" attrs="{'invisible': [('type', '!=', 'bare_ownership')]}">
                             <field name="usufructuary_ids" nolabel="1">
                                 <tree editable="bottom">
                                     <field name="name"/>
