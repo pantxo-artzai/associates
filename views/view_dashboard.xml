@@ -30,5 +30,38 @@
             </field>
         </record>
 
+        <!-- Dashboard Tree View -->
+        <record model="ir.ui.view" id="view_dashboard_tree">
+            <field name="name">Dashboard Tree</field>
+            <field name="model">associates.dashboard</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="card_title"/>
+                    <field name="card_description"/>
+                    <field name="button_title"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Dashboard Form View -->
+        <record model="ir.ui.view" id="view_dashboard_form">
+            <field name="name">Dashboard Form</field>
+            <field name="model">associates.dashboard</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="card_title"/>
+                            <field name="card_description"/>
+                            <field name="button_title"/>
+                            <field name="button_action"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
     </data>
 </odoo>
