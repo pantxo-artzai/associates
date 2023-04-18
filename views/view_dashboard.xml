@@ -17,7 +17,7 @@
                                     <div class="o_dashboard_card_body">
                                         <p><field name="name" invisible="1"/></p>
                                         <p><field name="button_action" invisible="1"/></p>
-                                        <p><field name="card_description"/></p>
+                                        <p><field name="card_description" widget="html"/></p>
                                         <a t-if="record.button_action.raw_value != ''" t-attf-href="/web#action=#{record.button_action.raw_value}&amp;model=associates.dashboard&amp;view_type=list" class="btn btn-primary" role="button">
                                         <field name="button_title"/>
                                         </a>
@@ -54,7 +54,7 @@
                         <group>
                             <field name="name"/>
                             <field name="card_title"/>
-                            <field name="card_description"/>
+                            <field name="card_description" widget="html"/>
                             <field name="button_title"/>
                             <field name="button_action"/>
                         </group>
