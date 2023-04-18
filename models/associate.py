@@ -32,9 +32,9 @@ class Associate(models.Model):
     usufructuary_ids = fields.Many2many("associates.associate", "associate_rel", "main_id", "other_id", string="Other Associates")
     dividend_percentage = fields.Float(string="Dividend pourcetage", store=True)
     type = fields.Selection([
-        ('full ownership', 'Full ownership'),
-        ('bare ownership', 'Bare ownership'),
-        ('other', 'Other')
+        ('full_ownership', 'Full ownership'),
+        ('bare_ownership', 'Bare ownership'),
+        ('usufructuaries', 'Usufructuaries')
     ], string='Type')
 
 
@@ -62,10 +62,10 @@ class Associate(models.Model):
         return action
     
     def create_shares(self):
-        # Récupérer l'action pour ouvrir le formulaire de création de parts
+        # Retrieve the action to open the share creation form.
         action = self.env.ref("associates.action_create_shares_wizard").read()[0]
 
-        # Transmettre l'ID de l'associé actuel à l'action
+        # Pass the ID of the current partner to the action.
         action["context"] = {
             "default_associate_id": self.id,
             "default_associate_name": self.name,

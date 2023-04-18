@@ -1,6 +1,6 @@
 <odoo>
     <data>
-        <!-- Vue tree "associates.associate" -->
+        <!-- Associates tree view "associates.associate" -->
         <record model="ir.ui.view" id="view_associate_tree">
             <field name="name">Associate Tree</field>
             <field name="model">associates.associate</field>
@@ -13,7 +13,7 @@
             </field>
         </record>
 
-        <!-- Vue kanban "associates.associate" -->
+        <!-- Associates kanban view "associates.associate" -->
         <record id="kanban_view" model="ir.ui.view">
             <field name="name">Associates kanban</field>
             <field name="model">associates.associate</field>
@@ -38,7 +38,7 @@
             </field>
         </record>
 
-        <!-- Vue graphique "associates.associate" -->
+        <!-- Associates graph view "associates.associate" -->
         <record model="ir.ui.view" id="view_associate_graph">
             <field name="name">Associate Graph</field>
             <field name="model">associates.associate</field>
@@ -50,14 +50,14 @@
             </field>
         </record>
 
-        <!-- Action associée au smart bouton "Shares" -->  
+        <!-- Action associated with the "Shares" smart button -->
         <record id="action_view_shares" model="ir.actions.act_window">
             <field name="name">Shares</field>
             <field name="res_model">associates.share</field>
             <field name="view_mode">tree,form</field>
         </record>
 
-        <!-- Vue formulaire "associates.associate" -->
+        <!-- Associates form view "associates.associate" -->
         <record model="ir.ui.view" id="view_associate_form">
             <field name="name">Associate Form</field>
             <field name="model">associates.associate</field>
