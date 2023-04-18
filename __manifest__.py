@@ -17,7 +17,7 @@
     'data': [
         'security/ir.model.access.csv',
         'views/menu.xml',
-        'views/templates.xml',
+        'views/view_legal_form_view.xml',
         'views/view_shares_wizard_form.xml',
         'views/update_associate_wizard.xml',
         'views/view_shares.xml',
@@ -25,6 +25,7 @@
         'views/view_dashboard.xml',
         'views/view_associates.xml',
         'views/view_dividends.xml',
+        'views/company_extension_view.xml',
 
         'data/data.xml',
         'data/actions.xml',

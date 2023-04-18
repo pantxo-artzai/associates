@@ -40,9 +40,6 @@
             <field name="country_id" ref="base.fr"/>
         </record>
 
-
-
-
         <record id="share_type_preference" model="associates.share.type">
             <field name="name">Actions de préférence</field>
             <field name="description">Les actions de préférence : ces actions donnent des droits spécifiques à leurs détenteurs, tels que des droits de priorité sur les dividendes ou des droits de vote supplémentaires. Ces actions sont souvent émises pour des investisseurs particuliers ou institutionnels qui souhaitent avoir un contrôle accru sur l'entreprise.
@@ -77,5 +74,83 @@
             </field>
             <field name="country_id" ref="base.fr"/>
         </record>
+
+        <!-- Legal forms in France -->
+        <record id="legal_form_sas" model="associates.legal_form">
+            <field name="name">SAS (Société par Actions Simplifiée)</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+
+        <record id="legal_form_sarl" model="associates.legal_form">
+            <field name="name">SARL (Société à Responsabilité Limitée)</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+
+        <record id="legal_form_sa" model="associates.legal_form">
+            <field name="name">SA (Société Anonyme)</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+
+        <record id="legal_form_eurl" model="associates.legal_form">
+            <field name="name">EURL (Entreprise Unipersonnelle à Responsabilité Limitée)</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+
+        <record id="legal_form_sas_u" model="associates.legal_form">
+            <field name="name">SASU (Société par Actions Simplifiée Unipersonnelle)</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+
+        <record id="legal_form_scop" model="associates.legal_form">
+            <field name="name">SCOP (Société Coopérative et Participative)</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+
+        <record id="legal_form_scic" model="associates.legal_form">
+            <field name="name">SCIC (Société Coopérative d'Intérêt Collectif)</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+
+        <record id="legal_form_cooperative" model="associates.legal_form">
+            <field name="name">Coopérative</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+
+        <record id="legal_form_sci" model="associates.legal_form">
+            <field name="name">SCI (Société Civile Immobilière)</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+
+        <!-- Legal forms for United Kingdom -->
+        <record id="uk_sole_trader" model="associates.legal_form">
+            <field name="name">Sole Trader</field>
+            <field name="country_id" ref="base.uk"/>
+        </record>
+
+        <record id="uk_limited_company" model="associates.legal_form">
+            <field name="name">Limited Company (Ltd)</field>
+            <field name="country_id" ref="base.uk"/>
+        </record>
+
+        <record id="uk_public_limited_company" model="associates.legal_form">
+            <field name="name">Public Limited Company (PLC)</field>
+            <field name="country_id" ref="base.uk"/>
+        </record>
+
+        <record id="uk_llp" model="associates.legal_form">
+            <field name="name">Limited Liability Partnership (LLP)</field>
+            <field name="country_id" ref="base.uk"/>
+        </record>
+
+        <record id="uk_partnership" model="associates.legal_form">
+            <field name="name">Partnership</field>
+            <field name="country_id" ref="base.uk"/>
+        </record>
+        
+        <record id="uk_community_interest_company" model="associates.legal_form">
+            <field name="name">Community Interest Company (CIC)</field>
+            <field name="country_id" ref="base.uk"/>
+        </record>
+        
     </data>
 </odoo>

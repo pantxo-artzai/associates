@@ -130,5 +130,20 @@
             <field name="sequence">40</field>
         </record>
 
+        <!-- Legal form action -->
+        <record id="action_associates_legal_form" model="ir.actions.act_window">
+            <field name="name">Legal Forms</field>
+            <field name="res_model">associates.legal_form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Leagl form Menu -->
+        <record id="menu_associates_legal_form" model="ir.ui.menu">
+            <field name="name">Legal Forms</field>
+            <field name="parent_id" ref="menu_associates_settings"/>
+            <field name="action" ref="action_associates_legal_form"/>
+            <field name="sequence">20</field>
+        </record>
+
     </data>
 </odoo>
