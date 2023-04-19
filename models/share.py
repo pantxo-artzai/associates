@@ -12,8 +12,7 @@ class Share(models.Model):
     value = fields.Float(string='Share Value')
     company_id = fields.Many2one(comodel_name='res.company', string='Company', default=lambda self: self.env.company)
     subscription_date = fields.Date(string='Subscription Date')
-    share_type_id = fields.Many2one(comodel_name='associates.share.type', string='Share Type')
-
+    share_type_id = fields.Many2one(string="Share Type", related="associate_id.share_type_id", readonly=True, store=True)
 
     @api.model
 
