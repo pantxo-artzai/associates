@@ -18,7 +18,7 @@
 
         <!-- Configuration des cartes du dashboard -->
         <record id="associates_dashboard_1" model="associates.dashboard">
-            <field name="name">531</field>
+            <field name="name">Shares</field>
             <field name="card_title">Shares</field>
             <field name="card_description">The Shares management function handles the creation, modification, and deletion of shares in a system.</field>
             <field name="button_title">Create shares</field>
@@ -26,7 +26,7 @@
         </record>
 
         <record id="associates_dashboard_2" model="associates.dashboard">
-            <field name="name">2</field>
+            <field name="name">Dividends</field>
             <field name="card_title">Dividends</field>
             <field name="card_description">Manage dividends</field>
             <field name="button_title"></field>
