@@ -13,6 +13,12 @@
                             <field name="description"/>
                             <field name="country_id"/>
                         </group>
+                        <group string="Options">
+                            <field name="dividend_fixed"/>
+                            <field name="dividend_priority"/>
+                            <field name="vote_agm"/>
+                            <field name="vote_egm"/>
+                        </group>
                     </sheet>
                 </form>
             </field>

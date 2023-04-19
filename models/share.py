@@ -48,4 +48,8 @@ class ShareType(models.Model):
     name = fields.Char(string='Name', required=True)
     description = fields.Text(string='Description')
     country_id = fields.Many2one(comodel_name='res.country', string='Country')
+    dividend_fixed = fields.Boolean(string="Fixed dividend")
+    dividend_priority = fields.Boolean(string="Priority dividends")
+    vote_agm = fields.Boolean(string="Vote at the Annual General Meeting (AGM)")
+    vote_egm = fields.Boolean(string="Vote at the Extraordinary General Meeting (EGM)")
 
