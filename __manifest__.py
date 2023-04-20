@@ -26,7 +26,8 @@
         'views/view_associates.xml',
         'views/view_dividends.xml',
         'views/company_extension_view.xml',
-
+        'report/report_associate_list_qweb.xml',
+        'report/report_view.xml',
         'data/data.xml',
         'data/actions.xml',
     ],
