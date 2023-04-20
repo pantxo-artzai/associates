@@ -8,7 +8,7 @@
 
                     <main>
                         <div class="page">
-                            <h2>Associates list</h2>
+                            <h1>Associates list</h1>
                             <table class="table table-bordered">
                                 <thead>
                                     <tr>
