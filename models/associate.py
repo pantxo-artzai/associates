@@ -39,7 +39,12 @@ class Associate(models.Model):
         ('usufructuaries', 'Usufructuaries')
     ], string='Type')
 
-
+    state = fields.Selection([
+        ('new', 'New'),
+        ('in_progress', 'In progress'),
+        ('validated', 'Validated'),
+        ('archived', 'Archived'),
+        ], string='Status', readonly=False, default='new')
 
     @api.model
     def create(self, vals):
@@ -72,8 +77,23 @@ class Associate(models.Model):
             "default_associate_id": self.id,
             "default_associate_name": self.name,
         }
-
         return action
+    
+    def action_in_progress(self):
+        for record in self:
+            record.state = 'in_progress'
+
+    def action_validate(self):
+        for record in self:
+            record.state = 'validated'
+
+    def action_archived(self):
+        for record in self:
+            record.state = 'archived'
+
+    def action_new(self):
+        for record in self:
+            record.state = 'new'
     
     @api.depends("share_ids", "company_id")
     def _compute_share_percentage(self):
