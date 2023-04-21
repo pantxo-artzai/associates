@@ -47,3 +47,7 @@ class dividend(models.Model):
     def action_pay(self):
         for record in self:
             record.state = 'paid'
+
+    def action_new(self):
+        for record in self:
+            record.state = 'new'

@@ -23,6 +23,7 @@
                     <button name="action_validate" string="Validate" type="object" class="oe_highlight" attrs="{'invisible': [('state', '!=', 'new')]}"/>
                     <button name="action_account" string="Account" type="object" class="oe_highlight" attrs="{'invisible': [('state', '!=', 'validated')]}"/>
                     <button name="action_pay" string="Pay" type="object" class="oe_highlight" attrs="{'invisible': [('state', '!=', 'accounted')]}"/>
+                    <button name="action_new" string="Return new" type="object" class="oe_highlight" attrs="{'invisible': [('state', '=', 'new')]}"/>
                     <field name="state" widget="statusbar" statusbar_visible="new,validated,accounted,paid" clickable="True"/>
                 </header>
                     <sheet>
