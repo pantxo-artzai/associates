@@ -8,7 +8,7 @@ class dividend(models.Model):
 
     display_name = fields.Char(string='dividend', compute='_compute_display_name')
     sequence = fields.Char(string='dividend Reference', required=True, copy=False, readonly=True, default=lambda self: _('New'))
-    associate_id = fields.Many2one(comodel_name='associates.associate', string='Associate', required=True)
+    associate_id = fields.Many2one('associates.associate', string='Associate', required=True)
     number = fields.Integer(string='dividend Number')
     value = fields.Float(string='dividend Value')
     total_value = fields.Float(string='Total Value')

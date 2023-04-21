@@ -57,6 +57,13 @@
             <field name="view_mode">tree,form</field>
         </record>
 
+        <!-- Action associated with the "Dividends" smart button -->
+        <record id="action_view_dividends" model="ir.actions.act_window">
+            <field name="name">Dividends</field>
+            <field name="res_model">associates.dividend</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
         <!-- Associates form view "associates.associate" -->
         <record model="ir.ui.view" id="view_associate_form">
             <field name="name">Associate Form</field>
@@ -69,8 +76,21 @@
                     </header>
                     <sheet>
                         <div name="button_box" position="inside">
-                            <button type="action" name="%(action_view_shares)d" string="Shares" icon="fa-money" class="oe_stat_button" context="{'default_associate_id': active_id}">
-                            <field name="share_count" string="Shares" widget="statinfo"/>
+                            <button type="action" 
+                                name="%(action_view_shares)d" 
+                                string="Shares" 
+                                icon="fa-pie-chart" 
+                                class="oe_stat_button" 
+                                context="{'default_associate_id': active_id}">
+                                <field name="share_count" string="Shares" widget="statinfo"/>
+                            </button>
+                            <button type="action"
+                                    name="%(action_view_dividends)d"
+                                    string="Dividends"
+                                    icon="fa-money"
+                                    class="oe_stat_button"
+                                    context="{'default_associate_id': active_id}">
+                                <field name="dividend_count" string="Dividends" widget="statinfo"/>
                             </button>
                         </div>
                         <group>
