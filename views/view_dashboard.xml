@@ -54,7 +54,7 @@
                         <group>
                             <field name="name"/>
                             <field name="card_title"/>
-                            <field name="card_description" widget="html"/>
+                            <field name="card_description" widget="html" class="oe-bordered-editor" options="{'style-inline': true, 'codeview': true, 'dynamic_placeholder': true}"/>
                             <field name="button_title"/>
                             <field name="button_action"/>
                         </group>
