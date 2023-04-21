@@ -14,6 +14,13 @@ class dividend(models.Model):
     total_value = fields.Float(string='Total Value')
     company_id = fields.Many2one(comodel_name='res.company', string='Company', default=lambda self: self.env.company)
 
+    state = fields.Selection([
+        ('new', 'New'),
+        ('validated', 'Validated'),
+        ('accounted', 'Accounted'),
+        ('paid', 'Paid'),
+        ], string='Status', readonly=True, default='new')
+
     @api.model
 
     def create(self, vals):
@@ -28,3 +35,15 @@ class dividend(models.Model):
             name = "%s" % (record.sequence)
             result.append((record.id, name))
         return result
+
+    def action_validate(self):
+        for record in self:
+            record.state = 'validated'
+
+    def action_account(self):
+        for record in self:
+            record.state = 'accounted'
+
+    def action_pay(self):
+        for record in self:
+            record.state = 'paid'

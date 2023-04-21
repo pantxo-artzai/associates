@@ -19,8 +19,12 @@
             <field name="model">associates.dividend</field>
             <field name="arch" type="xml">
                 <form>
-                    <header>
-                    </header>
+                <header>
+                    <button name="action_validate" string="Validate" type="object" class="oe_highlight" attrs="{'invisible': [('state', '!=', 'new')]}"/>
+                    <button name="action_account" string="Account" type="object" class="oe_highlight" attrs="{'invisible': [('state', '!=', 'validated')]}"/>
+                    <button name="action_pay" string="Pay" type="object" class="oe_highlight" attrs="{'invisible': [('state', '!=', 'accounted')]}"/>
+                    <field name="state" widget="statusbar" statusbar_visible="new,validated,accounted,paid" clickable="True"/>
+                </header>
                     <sheet>
                         <group>
                             <field name="display_name"/>
