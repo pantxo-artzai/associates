@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="distribute_dividends_wizard_view" model="ir.ui.view">
+        <field name="name">Distribute Dividends Wizard</field>
+        <field name="model">distribute.dividends.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="dividends_total_amount"/>
+                    <field name="note"/>
+                    <field name="date"/>
+                </group>
+                <footer>
+                    <button name="button_distribute" string="Distribute" type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_distribute_dividends_wizard" model="ir.actions.act_window">
+        <field name="name">Distribute Dividends</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">distribute.dividends.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="distribute_dividends_wizard_view"/>
+        <field name="target">new</field>
+    </record>
+</odoo>

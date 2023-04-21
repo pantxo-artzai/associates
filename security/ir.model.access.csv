@@ -7,3 +7,5 @@ access_associates_dashboard,Access Associates Dashboard,model_associates_dashboa
 access_associates_create_shares_wizard,Access Associates Create_shares_wizard,model_associates_create_shares_wizard,base.group_user,1,1,1,1
 access_associates_update_associate_wizard,Access Associates Update_associate_wizard,model_associates_update_associate_wizard,base.group_user,1,1,1,1
 access_associates_legal_form_all,associates.legal_form,model_associates_legal_form,base.group_user,1,1,1,1
+access_distribute_dividends_wizard,access_distribute_dividends_wizard,model_distribute_dividends_wizard,base.group_user,1,1,1,1
+
