@@ -11,7 +11,7 @@ class Associate(models.Model):
     company_id = fields.Many2one("res.company", string="Company", required=True, default=lambda self: self.env.company, tracking=1)
     share_ids = fields.One2many('associates.share', 'associate_id', string='Shares', tracking=1)
     share_type_id = fields.Many2one('associates.share.type', string='Default share type', required=True, tracking=1)
-    
+
     type = fields.Selection([
         ('full_ownership', 'Full ownership'),
         ('bare_ownership', 'Bare ownership'),
@@ -53,7 +53,7 @@ class Associate(models.Model):
 
     usufructuary_ids = fields.Many2many("associates.associate", "associate_rel", "main_id", "other_id", string="Other Associates")
     dividend_ids = fields.One2many('associates.dividend', 'associate_id', string='Dividends')
-    dividend_percentage = fields.Float(string="Dividend pourcetage", store=True)
+    usufructuary_percentage = fields.Float(string="Usufructary pourcetage", store=True)
     dividend_count = fields.Integer(compute='_compute_dividend_count', string='Dividend Count')
 
     @api.model
