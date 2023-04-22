@@ -11,28 +11,7 @@ class Associate(models.Model):
     company_id = fields.Many2one("res.company", string="Company", required=True, default=lambda self: self.env.company, tracking=1)
     share_ids = fields.One2many('associates.share', 'associate_id', string='Shares', tracking=1)
     share_type_id = fields.Many2one('associates.share.type', string='Default share type', required=True, tracking=1)
-
-    email = fields.Char(string='Email', related='partner_id.email')
-    phone = fields.Char(string='Phone', related='partner_id.phone')
-    address = fields.Char(string='Address')
-    birth_date = fields.Date(string='Birthdate')
-    gender = fields.Selection([
-        ('male', 'Male'),
-        ('female', 'Female'),
-        ('other', 'Other')
-    ], string='Gender')
-    nationality = fields.Many2one('res.country', string='Nationality', required=True)
-    membership_start_date = fields.Date(string='Start date', tracking=1)
-    shares_amount = fields.Float(string="Shares total amount", compute="_compute_shares_amount", store=True)
-    membership_end_date = fields.Date(string='End date', tracking=1)
-    notes = fields.Text(string='Notes')
-    share_count = fields.Integer(string='Shares', compute='_compute_share_count',store=True, tracking=1)
-    share_numbers = fields.Integer(string='Shares numbers', compute='_compute_share_count',store=True, tracking=1)
-    share_percentage = fields.Float(string="Share percentage", compute="_compute_share_percentage", store=True, tracking=1)
-    usufructuary_ids = fields.Many2many("associates.associate", "associate_rel", "main_id", "other_id", string="Other Associates")
-    dividend_ids = fields.One2many('associates.dividend', 'associate_id', string='Dividends')
-    dividend_percentage = fields.Float(string="Dividend pourcetage", store=True)
-    dividend_count = fields.Integer(compute='_compute_dividend_count', string='Dividend Count')
+    
     type = fields.Selection([
         ('full_ownership', 'Full ownership'),
         ('bare_ownership', 'Bare ownership'),
@@ -45,6 +24,37 @@ class Associate(models.Model):
         ('validated', 'Validated'),
         ('archived', 'Archived'),
         ], string='Status', readonly=False, default='new')
+
+    email = fields.Char(string='Email', related='partner_id.email')
+    phone = fields.Char(string='Phone', related='partner_id.phone')
+    street = fields.Char(string='street', related='partner_id.street')
+    street2 = fields.Char(string='street2', related='partner_id.street2')
+    city = fields.Char(string='city', related='partner_id.city')
+    state_id = fields.Many2one(string='state_id', related='partner_id.state_id')
+    zip = fields.Char(string='zip', related='partner_id.zip')
+    country_id = fields.Many2one(string='Counry', related='partner_id.country_id')
+
+    birth_date = fields.Date(string='Birthdate')
+    gender = fields.Selection([
+        ('male', 'Male'),
+        ('female', 'Female'),
+        ('other', 'Other')
+    ], string='Gender')
+    nationality = fields.Many2one('res.country', string='Nationality', required=True)
+    
+    membership_start_date = fields.Date(string='Start date', tracking=1)
+    shares_amount = fields.Float(string="Shares total amount", compute="_compute_shares_amount", store=True)
+    membership_end_date = fields.Date(string='End date', tracking=1)
+    notes = fields.Text(string='Notes')
+
+    share_count = fields.Integer(string='Shares', compute='_compute_share_count',store=True, tracking=1)
+    share_numbers = fields.Integer(string='Shares numbers', compute='_compute_share_count',store=True, tracking=1)
+    share_percentage = fields.Float(string="Share percentage", compute="_compute_share_percentage", store=True, tracking=1)
+
+    usufructuary_ids = fields.Many2many("associates.associate", "associate_rel", "main_id", "other_id", string="Other Associates")
+    dividend_ids = fields.One2many('associates.dividend', 'associate_id', string='Dividends')
+    dividend_percentage = fields.Float(string="Dividend pourcetage", store=True)
+    dividend_count = fields.Integer(compute='_compute_dividend_count', string='Dividend Count')
 
     @api.model
     def create(self, vals):

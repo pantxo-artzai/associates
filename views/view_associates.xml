@@ -104,16 +104,10 @@
                         </div>
                         <group>
                             <group string="Associate">
-                                <field name="name" invisible="1"/>
                                 <field name="partner_id"/>
-                                <field name="email" readonly="1"/>
-                                <field name="phone" readonly="1"/>
-                                <field name="birth_date"/>
-                                <field name="gender"/>
-                                <field name="nationality"/>
+                                <field name="type"/>
                                 <field name="membership_start_date"/>
                                 <field name="membership_end_date"/>
-                                <field name="type"/>
                                 <field name="notes" widget="text"/>
                             </group>
                             <group string="Shares">
@@ -124,15 +118,35 @@
                             </group>
                         </group>
                         <notebook>
-                        <page string="Usufructuaries" attrs="{'invisible': [('type', '!=', 'bare_ownership')]}">
-                            <field name="usufructuary_ids" nolabel="1">
-                                <tree editable="bottom">
-                                    <field name="name"/>
-                                    <field name="dividend_percentage"/>
-                                </tree>
-                            </field>
-                        </page>
+                            <page string="Personals informations">
+                                <group>
+                                    <group>
+                                        <field name="name" readonly="1"/>
+                                        <field name="email" readonly="1"/>
+                                        <field name="phone" readonly="1"/>
+                                        <field name="street" readonly="1"/>
+                                        <field name="street2" readonly="1"/>
+                                        <field name="city" readonly="1"/>
+                                        <field name="zip" readonly="1"/>
+                                        <field name="country_id" readonly="1"/>
+                                    </group>
+                                    <group>
+                                        <field name="birth_date"/>
+                                        <field name="gender"/>
+                                        <field name="nationality"/>
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="Usufructuaries" attrs="{'invisible': [('type', '!=', 'bare_ownership')]}">
+                                <field name="usufructuary_ids" nolabel="1">
+                                    <tree editable="bottom">
+                                        <field name="name"/>
+                                        <field name="dividend_percentage"/>
+                                    </tree>
+                                </field>
+                            </page>
                         </notebook>
+
                     </sheet>
                     <div class="oe_chatter">
                         <field name="message_follower_ids"/>
