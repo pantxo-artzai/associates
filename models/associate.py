@@ -7,10 +7,12 @@ class Associate(models.Model):
     _description = 'Associate'
 
     name = fields.Char(string='Name')
+    parent_id = fields.Many2one('associates.associate', string='Parent Associate')
     partner_id = fields.Many2one('res.partner', string='Related Contact', required=True, tracking=1)
     company_id = fields.Many2one("res.company", string="Company", required=True, default=lambda self: self.env.company, tracking=1)
     share_ids = fields.One2many('associates.share', 'associate_id', string='Shares', tracking=1)
     share_type_id = fields.Many2one('associates.share.type', string='Default share type', required=True, tracking=1)
+    bare_ownership_id = fields.Many2one('associates.associate', string='Bare Ownership', readonly=True)
 
     type = fields.Selection([
         ('full_ownership', 'Full ownership'),
@@ -51,16 +53,45 @@ class Associate(models.Model):
     share_numbers = fields.Integer(string='Shares numbers', compute='_compute_share_count',store=True, tracking=1)
     share_percentage = fields.Float(string="Share percentage", compute="_compute_share_percentage", store=True, tracking=1)
 
-    usufructuary_ids = fields.Many2many("associates.associate", "associate_rel", "main_id", "other_id", string="Other Associates")
+    usufructuary_ids = fields.Many2many(
+        "associates.associate", "associate_rel", "main_id", "other_id", string="Other Associates",
+        domain=[('type', '=', 'usufructuaries')]
+    )
+
     dividend_ids = fields.One2many('associates.dividend', 'associate_id', string='Dividends')
     usufructuary_percentage = fields.Float(string="Usufructary pourcetage", store=True)
     dividend_count = fields.Integer(compute='_compute_dividend_count', string='Dividend Count')
+
+    @api.depends('usufructuary_ids')
+    def _compute_bare_ownership_id(self):
+        for record in self:
+            main_associates = self.env['associates.associate'].search([('usufructuary_ids', 'in', record.id)])
+            if main_associates:
+                record.bare_ownership_id = main_associates[0]
+            else:
+                record.bare_ownership_id = False
 
     @api.model
     def create(self, vals):
         name = self.env['res.partner'].browse(vals['partner_id']).name
         vals.update({'name': name})
         return super(Associate, self).create(vals)
+    
+    def create(self, vals):
+        record = super(Associate, self).create(vals)
+        if 'usufructuary_ids' in vals:
+            for associate_id in vals['usufructuary_ids'][0][2]:
+                associate = self.env['associates.associate'].browse(associate_id)
+                associate.bare_ownership_id = record.id
+        return record
+
+    def write(self, vals):
+        res = super(Associate, self).write(vals)
+        if 'usufructuary_ids' in vals:
+            for associate_id in vals['usufructuary_ids'][0][2]:
+                associate = self.env['associates.associate'].browse(associate_id)
+                associate.bare_ownership_id = self.id
+        return res
     
     @api.onchange('partner_id')
     def _onchange_partner_id(self):
@@ -125,3 +156,4 @@ class Associate(models.Model):
     def _compute_dividend_count(self):
         for associate in self:
             associate.dividend_count = len(associate.dividend_ids)
+

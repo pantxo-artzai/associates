@@ -111,6 +111,7 @@
                                 <field name="notes" widget="text"/>
                             </group>
                             <group string="Shares">
+                                <field name="bare_ownership_id" attrs="{'invisible': [('type', '!=', 'usufructuaries')]}"/>
                                 <field name="share_type_id"/>
                                 <field name="share_numbers" readonly="1"/> 
                                 <field name="share_percentage" readonly="1"/>
