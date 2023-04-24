@@ -7,18 +7,47 @@ class Associate(models.Model):
     _description = 'Associate'
 
     name = fields.Char(string='Name')
-    parent_id = fields.Many2one('associates.associate', string='Parent Associate')
+    email = fields.Char(string='Email', related='partner_id.email')
+    phone = fields.Char(string='Phone', related='partner_id.phone')
+    birth_date = fields.Date(string='Birthdate')
+    nationality = fields.Many2one('res.country', string='Nationality', required=True)
+    street = fields.Char(string='street', related='partner_id.street')
+    street2 = fields.Char(string='street2', related='partner_id.street2')
+    city = fields.Char(string='city', related='partner_id.city')
+    state_id = fields.Many2one(string='state_id', related='partner_id.state_id')
+    zip = fields.Char(string='zip', related='partner_id.zip')
+    country_id = fields.Many2one(string='Counry', related='partner_id.country_id')
+    notes = fields.Text(string='Notes')
+
+    shares_amount = fields.Float(string="Shares total amount", compute="_compute_shares_amount", store=True)
+    share_count = fields.Integer(string='Shares', compute='_compute_share_count',store=True, tracking=1)
+    share_numbers = fields.Integer(string='Shares numbers', compute='_compute_share_count',store=True, tracking=1)
+    share_percentage = fields.Float(string="Share percentage", compute="_compute_share_percentage", store=True, tracking=1)
+    usufructuary_percentage = fields.Float(string="Usufructary pourcetage", store=True)
+    dividend_count = fields.Integer(compute='_compute_dividend_count', string='Dividend Count')
+
+    membership_start_date = fields.Date(string='Start date', tracking=1)
+    membership_end_date = fields.Date(string='End date', tracking=1)
+
     partner_id = fields.Many2one('res.partner', string='Related Contact', required=True, tracking=1)
     company_id = fields.Many2one("res.company", string="Company", required=True, default=lambda self: self.env.company, tracking=1)
-    share_ids = fields.One2many('associates.share', 'associate_id', string='Shares', tracking=1)
     share_type_id = fields.Many2one('associates.share.type', string='Default share type', required=True, tracking=1)
     bare_ownership_id = fields.Many2one('associates.associate', string='Bare Ownership', readonly=True)
+    dividend_ids = fields.One2many('associates.dividend', 'associate_id', string='Dividends')
+
+    share_ids = fields.One2many(
+        'associates.share', 'associate_id', string='Shares', tracking=1
+        )
+    usufructuary_ids = fields.Many2many(
+        "associates.associate", "associate_rel", "main_id", "other_id", string="Usufructuaries",
+        domain=[('type', '=', 'usufructuaries')]
+        )
 
     type = fields.Selection([
         ('full_ownership', 'Full ownership'),
         ('bare_ownership', 'Bare ownership'),
         ('usufructuaries', 'Usufructuaries')
-    ], string='Type')
+        ], string='Type')
 
     state = fields.Selection([
         ('new', 'New'),
@@ -27,40 +56,11 @@ class Associate(models.Model):
         ('archived', 'Archived'),
         ], string='Status', readonly=False, default='new')
 
-    email = fields.Char(string='Email', related='partner_id.email')
-    phone = fields.Char(string='Phone', related='partner_id.phone')
-    street = fields.Char(string='street', related='partner_id.street')
-    street2 = fields.Char(string='street2', related='partner_id.street2')
-    city = fields.Char(string='city', related='partner_id.city')
-    state_id = fields.Many2one(string='state_id', related='partner_id.state_id')
-    zip = fields.Char(string='zip', related='partner_id.zip')
-    country_id = fields.Many2one(string='Counry', related='partner_id.country_id')
-
-    birth_date = fields.Date(string='Birthdate')
     gender = fields.Selection([
         ('male', 'Male'),
         ('female', 'Female'),
         ('other', 'Other')
-    ], string='Gender')
-    nationality = fields.Many2one('res.country', string='Nationality', required=True)
-    
-    membership_start_date = fields.Date(string='Start date', tracking=1)
-    shares_amount = fields.Float(string="Shares total amount", compute="_compute_shares_amount", store=True)
-    membership_end_date = fields.Date(string='End date', tracking=1)
-    notes = fields.Text(string='Notes')
-
-    share_count = fields.Integer(string='Shares', compute='_compute_share_count',store=True, tracking=1)
-    share_numbers = fields.Integer(string='Shares numbers', compute='_compute_share_count',store=True, tracking=1)
-    share_percentage = fields.Float(string="Share percentage", compute="_compute_share_percentage", store=True, tracking=1)
-
-    usufructuary_ids = fields.Many2many(
-        "associates.associate", "associate_rel", "main_id", "other_id", string="Other Associates",
-        domain=[('type', '=', 'usufructuaries')]
-    )
-
-    dividend_ids = fields.One2many('associates.dividend', 'associate_id', string='Dividends')
-    usufructuary_percentage = fields.Float(string="Usufructary pourcetage", store=True)
-    dividend_count = fields.Integer(compute='_compute_dividend_count', string='Dividend Count')
+        ], string='Gender')
 
     @api.depends('usufructuary_ids')
     def _compute_bare_ownership_id(self):
@@ -73,24 +73,39 @@ class Associate(models.Model):
 
     @api.model
     def create(self, vals):
+        # Update the name based on the partner_id
         name = self.env['res.partner'].browse(vals['partner_id']).name
         vals.update({'name': name})
-        return super(Associate, self).create(vals)
-    
-    def create(self, vals):
+
         record = super(Associate, self).create(vals)
+
+        # Update the bare_ownership_id for the associated records
         if 'usufructuary_ids' in vals:
             for associate_id in vals['usufructuary_ids'][0][2]:
                 associate = self.env['associates.associate'].browse(associate_id)
                 associate.bare_ownership_id = record.id
+
         return record
 
     def write(self, vals):
+        # Store the current values of usufructuary_ids for each record
+        current_usufructuary_ids = {record.id: record.usufructuary_ids.ids for record in self}
+
         res = super(Associate, self).write(vals)
+
         if 'usufructuary_ids' in vals:
-            for associate_id in vals['usufructuary_ids'][0][2]:
-                associate = self.env['associates.associate'].browse(associate_id)
-                associate.bare_ownership_id = self.id
+            for record in self:
+                added_ids = set(vals['usufructuary_ids'][0][2]) - set(current_usufructuary_ids[record.id])
+                removed_ids = set(current_usufructuary_ids[record.id]) - set(vals['usufructuary_ids'][0][2])
+
+                for associate_id in added_ids:
+                    associate = self.env['associates.associate'].browse(associate_id)
+                    associate.bare_ownership_id = record.id
+
+                for associate_id in removed_ids:
+                    associate = self.env['associates.associate'].browse(associate_id)
+                    associate.bare_ownership_id = False
+
         return res
     
     @api.onchange('partner_id')
@@ -110,10 +125,7 @@ class Associate(models.Model):
         return action
     
     def create_shares(self):
-        # Retrieve the action to open the share creation form.
         action = self.env.ref("associates.action_create_shares_wizard").read()[0]
-
-        # Pass the ID of the current partner to the action.
         action["context"] = {
             "default_associate_id": self.id,
             "default_associate_name": self.name,

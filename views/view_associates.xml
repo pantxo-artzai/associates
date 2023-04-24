@@ -33,7 +33,7 @@
                                     <button/>
                                 </div>
                                 <div class="o_kanban_tags">
-                                    <span class="o_kanban_tags_section"><field name="state" widget="label_selection" options="{'classes': {'new': 'warning', 'in_progress': 'success', 'validated': 'info', 'archived': 'danger'}}"/></span>
+                                    <span class="o_kanban_tags_section"><field name="type" widget="label_selection" options="{'classes': {'full_ownership': 'warning', 'bare_ownership': 'success', 'usufructuaries': 'info'}}"/></span>
                                 </div>
                             </div>
                         </t>
