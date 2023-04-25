@@ -21,6 +21,7 @@
         'views/view_shares_wizard_form.xml',
         'views/distribute_dividends_wizard.xml',
         'views/update_associate_wizard.xml',
+        'views/wizard_update_percentage_view.xml',
         'views/view_shares.xml',
         'views/view_shares_type.xml',
         'views/view_dashboard.xml',

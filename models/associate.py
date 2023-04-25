@@ -107,7 +107,17 @@ class Associate(models.Model):
                     associate.bare_ownership_id = False
 
         return res
-    
+
+    def update_all_associates_percentage(self):
+        associates = self.search([])
+        for associate in associates:
+            total_shares = self.env["associates.share"].search_count([('company_id', '=', associate.company_id.id)])
+            associate_shares = len(associate.share_ids)
+            if total_shares > 0:
+                associate.share_percentage = (associate_shares / total_shares) * 100
+            else:
+                associate.share_percentage = 0.0
+
     @api.onchange('partner_id')
     def _onchange_partner_id(self):
         if self.partner_id:

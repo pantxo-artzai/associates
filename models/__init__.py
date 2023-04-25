@@ -9,3 +9,4 @@ from . import create_shares_wizard
 from . import update_associate_wizard
 from . import company_extension
 from . import distribute_dividends_wizard
+from . import wizard_update_percentage
