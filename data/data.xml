@@ -33,6 +33,14 @@
             <field name="button_action" ref="associates.action_distribute_dividends_wizard"/>
         </record>
 
+        <record id="associates_dashboard_3" model="associates.dashboard">
+            <field name="name">Update share percentage</field>
+            <field name="card_title">Update share percentage</field>
+            <field name="card_description">Update the share percentage held by each associate.</field>
+            <field name="button_title">Update</field>
+            <field name="button_action" ref="associates.action_update_percentage_wizard"/>
+        </record>
+
         <!-- Configuration des types de parts -->
         <record id="share_type_common" model="associates.share.type">
             <field name="name">Actions ordinaires</field>
