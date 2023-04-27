@@ -1,7 +1,149 @@
 <odoo>
     <data>
+        <!-- /// Associates /// -->
+        <!-- Menu principal -->
         <record id="menu_associates_management" model="ir.ui.menu">
-        <field name="name">Associates</field>
+            <field name="name">Associates</field>
         </record>
+
+        <!-- /// Dashboard /// -->
+        <!-- Action associée au menu "Dashboard" -->
+        <record id="action_dashboard_kanban" model="ir.actions.act_window">
+            <field name="name">Dashboard</field>
+            <field name="res_model">associates.dashboard</field>
+            <field name="view_mode">kanban</field>
+        </record>
+
+        <!-- Menu "Dashboard" -->
+        <record id="menu_dashboard" model="ir.ui.menu">
+            <field name="name">Dashboard</field>
+            <field name="parent_id" ref="menu_associates_management"/>
+            <field name="action" ref="action_dashboard_kanban" />
+            <field name="sequence">10</field>
+        </record>
+
+        <!-- /// Associates /// -->
+        <!-- Action associée au menu "Associates" -->
+        <record id="action_associate_form" model="ir.actions.act_window">
+            <field name="name">Associates</field>
+            <field name="res_model">associates.associate</field>
+            <field name="view_mode">kanban,tree,form</field>
+        </record>
+        
+        <!-- Menu "Associates" -->
+        <record id="menu_associates" model="ir.ui.menu">
+            <field name="name">Associates</field>
+            <field name="parent_id" ref="menu_associates_management"/>
+            <field name="action" ref="action_associate_form"/>
+            <field name="sequence">20</field>
+        </record>
+
+        <!-- /// Dividends /// -->
+        <!-- Action associée au menu "dividends" -->
+        <record id="action_dividends_form" model="ir.actions.act_window">
+            <field name="name">Dividends</field>
+            <field name="res_model">associates.dividend</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        
+        <!-- Menu "dividends" -->
+        <record id="menu_dividends" model="ir.ui.menu">
+            <field name="name">Dividends</field>
+            <field name="parent_id" ref="menu_associates_management"/>
+            <field name="action" ref="action_dividends_form"/>
+            <field name="sequence">40</field>
+        </record>
+
+        <!-- /// Shares /// -->
+        <!-- Action associée au menu "Shares" -->
+        <record id="action_share_form" model="ir.actions.act_window">
+            <field name="name">Shares</field>
+            <field name="res_model">associates.share</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Menu "Shares" -->
+        <record id="menu_shares" model="ir.ui.menu">
+            <field name="name">Shares</field>
+            <field name="parent_id" ref="menu_associates_management"/>
+            <field name="action" ref="action_share_form"/>
+            <field name="sequence">30</field>
+        </record>
+
+        <!-- /// Settings /// -->
+        <!-- Menu principal settings -->
+        <record id="menu_associates_settings" model="ir.ui.menu">
+            <field name="name">Settings</field>
+            <field name="parent_id" ref="menu_associates_management"/>
+            <field name="sequence">1000</field>
+        </record>
+
+        <record id="menuitem_company_update" model="ir.ui.menu">
+            <field name="name">Company Information</field>
+            <field name="parent_id" ref="menu_associates_settings"/>
+            <field name="action" ref="base.action_res_company_form"/>
+            <field name="sequence">10</field>
+        </record>
+        <!-- Action associée au menu "Shares type" -->
+        <record id="action_shares_type" model="ir.actions.act_window">
+            <field name="name">Shares type</field>
+            <field name="res_model">associates.share.type</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Menu "Shares type" -->
+        <record id="menu_shares_type" model="ir.ui.menu">
+            <field name="name">Shares type</field>
+            <field name="parent_id" ref="menu_associates_settings"/>
+            <field name="action" ref="action_shares_type"/>
+            <field name="sequence">20</field>
+        </record>
+
+        <!-- Action de fenêtre pour la gestion des numéros de séquence de parts et de dividendes -->
+        <record id="action_associates_share_sequence" model="ir.actions.act_window">
+            <field name="name">Sequences</field>
+            <field name="res_model">ir.sequence</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('code', 'in', ['associates.share.sequence', 'associates.dividend.sequence'])]</field>
+        </record>
+
+        <!-- Éléments de menu pour la gestion des numéros de séquence -->
+        <record id="menu_associates_share_sequence" model="ir.ui.menu">
+            <field name="name">Sequences</field>
+            <field name="parent_id" ref="menu_associates_settings"/>
+            <field name="action" ref="action_associates_share_sequence"/>
+            <field name="sequence">30</field>
+        </record>
+
+        <!-- Dashboard Setting Action -->
+        <record id="action_dashboard_settings" model="ir.actions.act_window">
+            <field name="name">Dashboard Settings</field>
+            <field name="res_model">associates.dashboard</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Dashboard Setting Menu -->
+        <record id="menu_dashboard_settings" model="ir.ui.menu">
+            <field name="name">Dashboard</field>
+            <field name="parent_id" ref="menu_associates_settings"/>
+            <field name="action" ref="action_dashboard_settings"/>
+            <field name="sequence">40</field>
+        </record>
+
+        <!-- Legal form action -->
+        <record id="action_associates_legal_form" model="ir.actions.act_window">
+            <field name="name">Legal Forms</field>
+            <field name="res_model">associates.legal_form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Leagl form Menu -->
+        <record id="menu_associates_legal_form" model="ir.ui.menu">
+            <field name="name">Legal Forms</field>
+            <field name="parent_id" ref="menu_associates_settings"/>
+            <field name="action" ref="action_associates_legal_form"/>
+            <field name="sequence">20</field>
+        </record>
+
     </data>
 </odoo>

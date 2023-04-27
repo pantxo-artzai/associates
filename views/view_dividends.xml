@@ -19,8 +19,13 @@
             <field name="model">associates.dividend</field>
             <field name="arch" type="xml">
                 <form>
-                    <header>
-                    </header>
+                <header>
+                    <button name="action_validate" string="Validate" type="object" class="oe_highlight" attrs="{'invisible': [('state', '!=', 'draft')]}"/>
+                    <button name="action_account" string="Account" type="object" class="oe_highlight" attrs="{'invisible': [('state', '!=', 'validated')]}"/>
+                    <button name="action_pay" string="Pay" type="object" class="oe_highlight" attrs="{'invisible': [('state', '!=', 'accounted')]}"/>
+                    <button name="action_draft" string="Return to draft" type="object" class="oe_highlight" attrs="{'invisible': [('state', '=', 'draft')]}"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,validated,accounted,paid" clickable="True"/>
+                </header>
                     <sheet>
                         <group>
                             <field name="display_name"/>
@@ -36,13 +41,6 @@
             </field>
         </record>
 
-        <!-- Définition de l'action associée au menu "dividends" -->
-        <record id="action_dividends_form" model="ir.actions.act_window">
-            <field name="name">Dividends</field>
-            <field name="res_model">associates.dividend</field>
-            <field name="view_mode">tree,form</field>
-        </record>
-
         <!-- Définition de l'action de création de dividends -->
         <record id="action_create_dividends" model="ir.actions.act_window">
             <field name="name">Create dividends</field>
@@ -51,12 +49,5 @@
             <field name="target">new</field>
         </record>
 
-        <!-- Définition du menu "dividends" -->
-        <record id="menu_dividends" model="ir.ui.menu">
-            <field name="name">Dividends</field>
-            <field name="parent_id" ref="menu_associates_management"/>
-            <field name="action" ref="action_dividends_form"/>
-            <field name="sequence">40</field>
-        </record>
     </data>
 </odoo>

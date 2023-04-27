@@ -7,8 +7,8 @@
             <field name="arch" type="xml">
                 <tree>
                     <field name="display_name"/>
-                    <field name="number"/>
                     <field name="value"/>
+                    <field name="subscription_date"/>
                     <field name="associate_id"/>
                 </tree>
             </field>
@@ -25,9 +25,11 @@
                     <sheet>
                         <group>
                             <field name="display_name"/>
-                            <field name="number"/>
                             <field name="value"/>
+                            <field name="subscription_date"/>
                             <field name="associate_id"/>
+                            <field name="share_type_id"/>
+                            
                         </group>
                     </sheet>
                     <div class="oe_chatter">
@@ -38,13 +40,6 @@
             </field>
         </record>
 
-        <!-- Définition de l'action associée au menu "Shares" -->
-        <record id="action_share_form" model="ir.actions.act_window">
-            <field name="name">Shares</field>
-            <field name="res_model">associates.share</field>
-            <field name="view_mode">tree,form</field>
-        </record>
-
         <!-- Définition de l'action de création de Share -->
         <record id="action_create_share" model="ir.actions.act_window">
             <field name="name">Create Share</field>
@@ -53,12 +48,5 @@
             <field name="target">new</field>
         </record>
 
-        <!-- Définition du menu "Shares" -->
-        <record id="menu_shares" model="ir.ui.menu">
-            <field name="name">Shares</field>
-            <field name="parent_id" ref="menu_associates_management"/>
-            <field name="action" ref="action_share_form"/>
-            <field name="sequence">30</field>
-        </record>
     </data>
 </odoo>

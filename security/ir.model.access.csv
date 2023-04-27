@@ -1,5 +1,12 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_associates_associate,Access Associates Associate,model_associates_associate,base.group_user,1,1,1,1
 access_associates_share,Access Associates Share,model_associates_share,base.group_user,1,1,1,1
+access_associates_share_type,Access Associates Share Type,model_associates_share_type,base.group_user,1,1,1,1
 access_associates_dividend,Access Associates Dividend,model_associates_dividend,base.group_user,1,1,1,1
 access_associates_dashboard,Access Associates Dashboard,model_associates_dashboard,base.group_user,1,1,1,1
+access_associates_create_shares_wizard,Access Associates Create_shares_wizard,model_associates_create_shares_wizard,base.group_user,1,1,1,1
+access_associates_update_associate_wizard,Access Associates Update_associate_wizard,model_associates_update_associate_wizard,base.group_user,1,1,1,1
+access_associates_legal_form_all,associates.legal_form,model_associates_legal_form,base.group_user,1,1,1,1
+access_distribute_dividends_wizard,access_distribute_dividends_wizard,model_distribute_dividends_wizard,base.group_user,1,1,1,1
+
+access_associates_update_percentage_wizard,Access Associates wupdate_percentage_wizard,model_associates_update_percentage_wizard,base.group_user,1,1,1,1

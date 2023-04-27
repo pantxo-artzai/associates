@@ -1,0 +1,35 @@
+<odoo>
+    <data>
+        <!-- Action pour l'assistant de création de parts -->
+        <record id="action_create_shares_wizard" model="ir.actions.act_window">
+            <field name="name">Create Shares</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">associates.create_shares_wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <!-- Vue formulaire pour l'assistant de création de parts -->
+        <record model="ir.ui.view" id="view_create_shares_wizard_form">
+            <field name="name">Create Shares Wizard Form</field>
+            <field name="model">associates.create_shares_wizard</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="associate_id" Create="0"/>
+                        <field name="associate_name"/>
+                        <field name="share_type_id"/>
+                        <field name="share_count"/>
+                        <field name="share_value"/>
+                        <field name="subscription_date"/>
+                    </group>
+                    <footer>
+                        <button name="create_shares" string="Create Shares" type="object" class="oe_highlight"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        
+    </data>
+</odoo>

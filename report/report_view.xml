@@ -1,0 +1,17 @@
+<odoo>
+    <data>
+
+        <!-- Associates PDF Report -->
+        <record id="associate_list" model="ir.actions.report">
+            <field name="name">Associates List</field>
+            <field name="model">associates.associate</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">associates.report_associate_list_qweb</field>
+            <field name="report_file">associates.report_associate_list_qweb</field>
+            <field name="binding_model_id" ref="associates.model_associates_associate"/>
+            <field name="binding_type">report</field>
+            <field name="print_report_name">'Associates List'</field>
+        </record>
+
+    </data>
+</odoo>

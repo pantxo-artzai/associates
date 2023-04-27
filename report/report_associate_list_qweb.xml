@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Template for Associates List -->
+    <template id="report_associate_list_qweb">
+        <t t-call="web.html_container">
+            <t t-set="doc" t-value="docs[0]"/>
+                <t t-call="web.external_layout">
+
+                    <main>
+                        <div class="page">
+                            <h1>Associates list</h1>
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Type</th>
+                                        <th>Share type</th>
+                                        <th>Shares number</th>
+                                        <th>Share percentage</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr t-foreach="docs" t-as="associate">
+                                        <td><span t-field="associate.name"/></td>
+                                        <td><span t-field="associate.type"/></td>
+                                        <td><span t-field="associate.share_type_id.name"/></td>
+                                        <td><span t-field="associate.share_numbers"/></td>
+                                        <td><span t-field="associate.share_percentage"/></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                   </main>
+
+                </t>
+        </t>
+    </template>
+</odoo>

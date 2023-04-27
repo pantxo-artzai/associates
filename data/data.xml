@@ -1,18 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
+        <!-- Configuration des numéros de séquence -->
         <record id="associates_share_sequence" model="ir.sequence">
             <field name="name">Share Sequence</field>
             <field name="code">associates.share.sequence</field>
             <field name="prefix">SHARE/</field>
             <field name="padding">4</field>
-        </record>
-        <record id="action_view_share" model="ir.actions.act_window">
-            <field name="name">Shares</field>
-            <field name="res_model">associates.share</field>
-            <field name="view_mode">tree,form</field>
-            <field name="domain">[('associate_id', 'in', [active_id])]</field>
-            <field name="context">{'default_associate_id': active_id}</field>
         </record>
 
         <record id="associates_dividend_sequence" model="ir.sequence">
@@ -21,12 +15,150 @@
             <field name="prefix">DIV/</field>
             <field name="padding">4</field>
         </record>
-        <record id="action_view_dividend" model="ir.actions.act_window">
-            <field name="name">dividends</field>
-            <field name="res_model">associates.dividend</field>
-            <field name="view_mode">tree,form</field>
-            <field name="domain">[('associate_id', 'in', [active_id])]</field>
-            <field name="context">{'default_associate_id': active_id}</field>
+
+        <!-- Configuration des cartes du dashboard -->
+        <record id="associates_dashboard_1" model="associates.dashboard">
+            <field name="name">Shares</field>
+            <field name="card_title">Shares</field>
+            <field name="card_description">Create shares and assign them to a shareholder.</field>
+            <field name="button_title">Create shares</field>
+            <field name="button_action" ref="associates.action_create_shares_wizard"/>
         </record>
+
+        <record id="associates_dashboard_2" model="associates.dashboard">
+            <field name="name">Dividends</field>
+            <field name="card_title">Dividends</field>
+            <field name="card_description">Distribute dividends to your shareholders.</field>
+            <field name="button_title">Distribute</field>
+            <field name="button_action" ref="associates.action_distribute_dividends_wizard"/>
+        </record>
+
+        <record id="associates_dashboard_3" model="associates.dashboard">
+            <field name="name">Update share percentage</field>
+            <field name="card_title">Update share percentage</field>
+            <field name="card_description">Update the share percentage held by each associate.</field>
+            <field name="button_title">Update</field>
+            <field name="button_action" ref="associates.action_update_percentage_wizard"/>
+        </record>
+
+        <!-- Configuration des types de parts -->
+        <record id="share_type_common" model="associates.share.type">
+            <field name="name">Actions ordinaires</field>
+            <field name="description">Les actions ordinaires : ce sont les actions les plus courantes, qui confèrent à leur détenteur des droits de vote lors des assemblées générales et un droit à une partie des bénéfices distribués sous forme de dividendes.</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+
+        <record id="share_type_preference" model="associates.share.type">
+            <field name="name">Actions de préférence</field>
+            <field name="description">Les actions de préférence : ces actions donnent des droits spécifiques à leurs détenteurs, tels que des droits de priorité sur les dividendes ou des droits de vote supplémentaires. Ces actions sont souvent émises pour des investisseurs particuliers ou institutionnels qui souhaitent avoir un contrôle accru sur l'entreprise.
+            </field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+
+        <record id="share_type_priority" model="associates.share.type">
+            <field name="name">Actions de priorité</field>
+            <field name="description">Les actions de priorité : ces actions donnent à leurs détenteurs un droit à une partie des bénéfices distribués sous forme de dividendes avant les actionnaires ordinaires. Toutefois, ces actions n'ont généralement pas de droit de vote.
+            </field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+
+        <record id="share_type_free" model="associates.share.type">
+            <field name="name">Actions gratuites</field>
+            <field name="description">Les actions gratuites : ce sont des actions qui sont émises gratuitement aux actionnaires existants en fonction du nombre d'actions qu'ils détiennent déjà. Ces actions ne peuvent être vendues pendant une période déterminée.
+            </field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+
+        <record id="share_type_performance" model="associates.share.type">
+            <field name="name">Actions de performance</field>
+            <field name="description">Les actions de performance : ces actions sont liées à la performance de l'entreprise ou à des objectifs spécifiques. Si l'entreprise atteint ses objectifs, les détenteurs de ces actions peuvent recevoir des dividendes ou voir leur valeur augmenter.
+            </field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+
+        <record id="share_type_absa" model="associates.share.type">
+            <field name="name">Actions à bons de souscription d'actions (ABSA)</field>
+            <field name="description">Les actions ordinaires : ce sont les actions les plus courantes, qui confèrent à leur détenteur des droits de vote lors des assemblées générales et un droit à une partie des bénéfices distribués sous forme de dividendes.
+            </field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+
+        <!-- Legal forms in France -->
+        <record id="legal_form_sas" model="associates.legal_form">
+            <field name="name">SAS (Société par Actions Simplifiée)</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+
+        <record id="legal_form_sarl" model="associates.legal_form">
+            <field name="name">SARL (Société à Responsabilité Limitée)</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+
+        <record id="legal_form_sa" model="associates.legal_form">
+            <field name="name">SA (Société Anonyme)</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+
+        <record id="legal_form_eurl" model="associates.legal_form">
+            <field name="name">EURL (Entreprise Unipersonnelle à Responsabilité Limitée)</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+
+        <record id="legal_form_sas_u" model="associates.legal_form">
+            <field name="name">SASU (Société par Actions Simplifiée Unipersonnelle)</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+
+        <record id="legal_form_scop" model="associates.legal_form">
+            <field name="name">SCOP (Société Coopérative et Participative)</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+
+        <record id="legal_form_scic" model="associates.legal_form">
+            <field name="name">SCIC (Société Coopérative d'Intérêt Collectif)</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+
+        <record id="legal_form_cooperative" model="associates.legal_form">
+            <field name="name">Coopérative</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+
+        <record id="legal_form_sci" model="associates.legal_form">
+            <field name="name">SCI (Société Civile Immobilière)</field>
+            <field name="country_id" ref="base.fr"/>
+        </record>
+
+        <!-- Legal forms for United Kingdom -->
+        <record id="uk_sole_trader" model="associates.legal_form">
+            <field name="name">Sole Trader</field>
+            <field name="country_id" ref="base.uk"/>
+        </record>
+
+        <record id="uk_limited_company" model="associates.legal_form">
+            <field name="name">Limited Company (Ltd)</field>
+            <field name="country_id" ref="base.uk"/>
+        </record>
+
+        <record id="uk_public_limited_company" model="associates.legal_form">
+            <field name="name">Public Limited Company (PLC)</field>
+            <field name="country_id" ref="base.uk"/>
+        </record>
+
+        <record id="uk_llp" model="associates.legal_form">
+            <field name="name">Limited Liability Partnership (LLP)</field>
+            <field name="country_id" ref="base.uk"/>
+        </record>
+
+        <record id="uk_partnership" model="associates.legal_form">
+            <field name="name">Partnership</field>
+            <field name="country_id" ref="base.uk"/>
+        </record>
+        
+        <record id="uk_community_interest_company" model="associates.legal_form">
+            <field name="name">Community Interest Company (CIC)</field>
+            <field name="country_id" ref="base.uk"/>
+        </record>
+        
     </data>
 </odoo>
