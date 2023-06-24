@@ -7,8 +7,8 @@
             <field name="arch" type="xml">
                 <tree>
                     <field name="name"/>
-                    <field name="email"/>
-                    <field name="phone"/>
+                    <field name="company_id" widget="many2many_tags"/>
+                    <field name="type"/>
                 </tree>
             </field>
         </record>
@@ -42,6 +42,16 @@
             </field>
         </record>
 
+        <!-- Associates pivot view "associates.associate" -->
+        <record id="view_associate_pivot" model="ir.ui.view">
+            <field name="name">Associate Pivot</field>
+            <field name="model">associates.associate</field>
+            <field name="arch" type="xml">
+                <pivot string="Associate Analysis">
+                </pivot>
+            </field>
+        </record>
+
         <!-- Associates graph view "associates.associate" -->
         <record model="ir.ui.view" id="view_associate_graph">
             <field name="name">Associate Graph</field>
@@ -49,7 +59,6 @@
             <field name="arch" type="xml">
                 <graph string="Associates" type="pie">
                     <field name="name" type="row"/>
-                    <field name="share_count" type="measure"/>
                 </graph>
             </field>
         </record>
@@ -65,6 +74,13 @@
         <record id="action_view_dividends" model="ir.actions.act_window">
             <field name="name">Dividends</field>
             <field name="res_model">associates.dividend</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Action associated with the "Operations" smart button -->
+        <record id="action_view_operations" model="ir.actions.act_window">
+            <field name="name">Opertaions</field>
+            <field name="res_model">associates.operation</field>
             <field name="view_mode">tree,form</field>
         </record>
 
@@ -90,7 +106,6 @@
                                 icon="fa-pie-chart" 
                                 class="oe_stat_button" 
                                 context="{'default_associate_id': active_id}">
-                                <field name="share_count" string="Shares" widget="statinfo"/>
                             </button>
                             <button type="action"
                                     name="%(action_view_dividends)d"
@@ -98,29 +113,33 @@
                                     icon="fa-money"
                                     class="oe_stat_button"
                                     context="{'default_associate_id': active_id}">
-                                <field name="dividend_count" string="Dividends" widget="statinfo"/>
+                            </button>
+                            <button type="action"
+                                    name="%(action_view_operations)d"
+                                    string="Operations"
+                                    icon="fa-list"
+                                    class="oe_stat_button"
+                                    context="{'default_associate_id': active_id}">
                             </button>
                         </div>
                         <group>
-                            <group string="Associate">
+                            <group>
                                 <field name="partner_id"/>
+                                <field name="company_id" widget="many2many_tags"/>
                                 <field name="type"/>
+                                <field name="bare_ownership_id" attrs="{'invisible': [('type', '!=', 'usufructuaries')]}"/>
+                            </group>
+                            <group>
                                 <field name="membership_start_date"/>
                                 <field name="membership_end_date"/>
                                 <field name="notes" widget="text"/>
                             </group>
-                            <group string="Shares">
-                                <field name="bare_ownership_id" attrs="{'invisible': [('type', '!=', 'usufructuaries')]}"/>
-                                <field name="share_type_id"/>
-                                <field name="share_numbers" readonly="1"/> 
-                                <field name="share_percentage" readonly="1"/>
-                                <field name="shares_amount" readonly="1"/>
-                            </group>
                         </group>
                         <notebook>
+                            <!-- Page Personals informations-->
                             <page string="Personals informations">
                                 <group>
-                                    <group>
+                                    <group string="General informations">
                                         <field name="name" readonly="1"/>
                                         <field name="email" readonly="1"/>
                                         <field name="phone" readonly="1"/>
@@ -130,17 +149,40 @@
                                         <field name="zip" readonly="1"/>
                                         <field name="country_id" readonly="1"/>
                                     </group>
-                                    <group>
+                                    <group string="Others informations">
                                         <field name="birth_date"/>
+                                        <field name="birth_country_id"/>
+                                        <field name="birth_country_code"/>
+                                        <field name="birth_city" attrs="{'invisible': [('birth_country_code', '!=', 'FR')]}"/>
                                         <field name="gender"/>
                                         <field name="nationality"/>
+                                        <field name="deceased"/>
+                                        <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
+
                                     </group>
                                 </group>
                             </page>
+                            <!-- Page Accounting-->
+                            <page string="Accounting">
+                                <group>
+                                    <group string="Bank informations">
+                                        <field name="bank_ids">
+                                            <tree editable="bottom">
+                                                <field name="bank_id"/>
+                                                <field name="acc_number"/>
+                                            </tree>
+                                        </field>
+                                    </group>
+                                    <group string="Accounting entries">
+                                    </group>
+                                </group>
+                            </page>
+                            <!-- Page Usufructuaries-->
                             <page string="Usufructuaries" attrs="{'invisible': [('type', '!=', 'bare_ownership')]}">
                                 <field name="usufructuary_ids" nolabel="1">
                                     <tree editable="bottom">
                                     <field name="name"/>
+                                    <!-- <field name="usufructuary_share_percentage"/> -->
                                     </tree>
                                 </field>
                             </page>

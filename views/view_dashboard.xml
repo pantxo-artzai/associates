@@ -6,15 +6,16 @@
             <field name="model">associates.dashboard</field>
 
             <field name="arch" type="xml">
-                <kanban create="false" js_class="web_kanban.KanbanView">
+                <kanban default_group_by="category" create="false" group_edit="false" js_class="web_kanban.KanbanView">
                     <templates>
                         <t t-name="kanban-box">
-                            <div class="oe_kanban_global_click o_dashboard">
+                            <div class="oe_kanban_global_click o_dashboard" style="margin-bottom: 20px;">
                                 <div class="o_dashboard_card">
                                     <div class="o_dashboard_card_header">
                                         <h3><field name="card_title"/></h3>
                                     </div>
                                     <div class="o_dashboard_card_body">
+                                        <field name="category" invisible="1" readonly="1"/>
                                         <p><field name="name" invisible="1"/></p>
                                         <p><field name="button_action" invisible="1"/></p>
                                         <p><field name="card_description" widget="html"/></p>
@@ -53,6 +54,7 @@
                     <sheet>
                         <group>
                             <field name="name"/>
+                            <field name="category"/>
                             <field name="card_title"/>
                             <field name="card_description" widget="html" class="oe-bordered-editor" options="{'style-inline': true, 'codeview': true, 'dynamic_placeholder': true}"/>
                             <field name="button_title"/>

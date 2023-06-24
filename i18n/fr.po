@@ -1,0 +1,1022 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: asscoiates\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.2.2\n"
+
+#. module: associates
+#: model:ir.actions.report,print_report_name:associates.associate_list
+msgid "'Associates List'"
+msgstr "'Liste des associés'"
+
+#. module: associates
+#: model_terms:ir.ui.view,arch_db:associates.view_dividends_form
+msgid "Account"
+msgstr "Compte"
+
+#. module: associates
+#: model:ir.model.fields.selection,name:associates.selection__associates_dividend__state__accounted
+msgid "Accounted"
+msgstr "Comptabilisé"
+
+#. module: associates
+#: model:ir.model.fields,field_description:associates.field_associates_associate__message_needaction
+#: model:ir.model.fields,field_description:associates.field_associates_dividend__message_needaction
+#: model:ir.model.fields,field_description:associates.field_associates_share__message_needaction
+msgid "Action Needed"
+msgstr "Action nécessaire"
+
+#. module: associates
+#: model_terms:ir.ui.view,arch_db:associates.view_associate_form
+msgid "Archive"
+msgstr "Archive"
+
+#. module: associates
+#: model:ir.model.fields.selection,name:associates.selection__associates_associate__state__archived
+msgid "Archived"
+msgstr "Archivé"
+
+#. module: associates
+#: model:ir.model,name:associates.model_associates_associate
+#: model:ir.model.fields,field_description:associates.field_associates_create_shares_wizard__associate_id
+#: model:ir.model.fields,field_description:associates.field_associates_dividend__associate_id
+#: model:ir.model.fields,field_description:associates.field_associates_share__associate_id
+#: model_terms:ir.ui.view,arch_db:associates.view_associate_form
+msgid "Associate"
+msgstr "Associé"
+
+#. module: associates
+#: model:ir.model.fields,field_description:associates.field_associates_create_shares_wizard__associate_name
+msgid "Associate Name"
+msgstr "Nom de l'associé"
+
+#. module: associates
+#: model:ir.actions.act_window,name:associates.action_associate_form
+#: model:ir.ui.menu,name:associates.menu_associates
+#: model:ir.ui.menu,name:associates.menu_associates_management
+#: model_terms:ir.ui.view,arch_db:associates.view_associate_graph
+msgid "Associates"
+msgstr "Associés"
+
+#. module: associates
+#: model:ir.actions.report,name:associates.associate_list
+msgid "Associates List"
+msgstr "Liste des associés"
+
+#. module: associates
+#: model_terms:ir.ui.view,arch_db:associates.report_associate_list_qweb
+msgid "Associates list"
+msgstr "Liste des associés"
+
+#. module: associates
+#: model:ir.model.fields,field_description:associates.field_associates_associate__message_attachment_count
+#: model:ir.model.fields,field_description:associates.field_associates_dividend__message_attachment_count
+#: model:ir.model.fields,field_description:associates.field_associates_share__message_attachment_count
+msgid "Attachment Count"
+msgstr "Nombre de pièces jointes"
+
+#. module: associates
+#: model:ir.model.fields,field_description:associates.field_associates_associate__bare_ownership_id
+msgid "Bare Ownership"
+msgstr "Nue-propriété"
+
+#. module: associates
+#: model:ir.model.fields.selection,name:associates.selection__associates_associate__type__bare_ownership
+msgid "Bare ownership"
+msgstr "Nue-propriété"
+
+#. module: associates
+#: model:ir.model.fields,field_description:associates.field_associates_associate__birth_date
+msgid "Birthdate"
+msgstr "Date de naissance"
+
+#. module: associates
+#: model:ir.model.fields,field_description:associates.field_associates_dashboard__button_action
+msgid "Button Action"
+msgstr "Action du bouton"
+
+#. module: associates
+#: model:ir.model.fields,field_description:associates.field_associates_dashboard__button_title
+msgid "Button Title"
+msgstr "Titre du bouton"
+
+#. module: associates
+#: model_terms:ir.ui.view,arch_db:associates.view_update_percentage_wizard_form
+msgid ""
+"By clicking the Update button, you will update the share percentage held by "
+"each associate."
+msgstr ""
+"En cliquant sur le bouton Mettre à jour, vous mettrez à jour le pourcentage "
+"de parts détenu par chaque associé."
+
+#. module: associates
+#: model_terms:ir.ui.view,arch_db:associates.distribute_dividends_wizard_view
+#: model_terms:ir.ui.view,arch_db:associates.view_create_shares_wizard_form
+#: model_terms:ir.ui.view,arch_db:associates.view_update_associate_wizard_form
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: associates
+#: model:ir.model.fields,field_description:associates.field_res_company__capital
+msgid "Capital"
+msgstr "Capital"
+
+#. module: associates
+#: model:ir.model.fields,field_description:associates.field_associates_dashboard__card_description
+msgid "Card Description"
+msgstr "Description de la carte"
+
+#. module: associates
+#: model:ir.model.fields,field_description:associates.field_associates_dashboard__card_title
+msgid "Card Title"
+msgstr "Titre de la carte"
+
+#. module: associates
+#: model_terms:ir.ui.view,arch_db:associates.view_update_percentage_wizard_form
+msgid "Close"
+msgstr "Fermer"
+
+#. module: associates
+#: model:ir.model,name:associates.model_res_company
+msgid "Companies"
+msgstr "Entreprises"
+
+#. module: associates
+#: model:ir.model.fields,field_description:associates.field_associates_associate__company_id
+#: model:ir.model.fields,field_description:associates.field_associates_dividend__company_id
+#: model:ir.model.fields,field_description:associates.field_associates_share__company_id
+msgid "Company"
+msgstr "Entreprise"
+
+#. module: associates
+#: model:ir.ui.menu,name:associates.menuitem_company_update
+msgid "Company Information"
+msgstr "Informations sur la société"
+
+#. module: associates
+#: model:ir.model.fields,field_description:associates.field_associates_associate__country_id
+msgid "Counry"
+msgstr "Pays"
+
+#. module: associates
+#: model:ir.model.fields,field_description:associates.field_associates_legal_form__country_id
+#: model:ir.model.fields,field_description:associates.field_associates_share_type__country_id
+msgid "Country"
+msgstr "Pays"
+
+#. module: associates
+#: model:ir.actions.act_window,name:associates.action_create_share
+msgid "Create Share"
+msgstr "Créer des Parts"
+
+#. module: associates
+#: model:ir.actions.act_window,name:associates.action_create_shares_wizard
+#: model_terms:ir.ui.view,arch_db:associates.view_associate_form
+#: model_terms:ir.ui.view,arch_db:associates.view_create_shares_wizard_form
+msgid "Create Shares"
+msgstr "Créer des parts"
+
+#. module: associates
+#: model:ir.actions.act_window,name:associates.action_create_dividends
+msgid "Create dividends"
+msgstr "Créer des dividendes"
+
+#. module: associates
+#: model:ir.model,name:associates.model_associates_create_shares_wizard
+msgid "Create shares wizard"
+msgstr "Assistant de création de parts"
+
+#. module: associates
+#: model:ir.model.fields,field_description:associates.field_associates_associate__create_uid
+#: model:ir.model.fields,field_description:associates.field_associates_create_shares_wizard__create_uid
+#: model:ir.model.fields,field_description:associates.field_associates_dashboard__create_uid
+#: model:ir.model.fields,field_description:associates.field_associates_dividend__create_uid
+#: model:ir.model.fields,field_description:associates.field_associates_legal_form__create_uid
+#: model:ir.model.fields,field_description:associates.field_associates_share__create_uid
+#: model:ir.model.fields,field_description:associates.field_associates_share_type__create_uid
+#: model:ir.model.fields,field_description:associates.field_associates_update_associate_wizard__create_uid
+#: model:ir.model.fields,field_description:associates.field_associates_update_percentage_wizard__create_uid
+#: model:ir.model.fields,field_description:associates.field_distribute_dividends_wizard__create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: associates
+#: model:ir.model.fields,field_description:associates.field_associates_associate__create_date
+#: model:ir.model.fields,field_description:associates.field_associates_create_shares_wizard__create_date
+#: model:ir.model.fields,field_description:associates.field_associates_dashboard__create_date
+#: model:ir.model.fields,field_description:associates.field_associates_dividend__create_date
+#: model:ir.model.fields,field_description:associates.field_associates_legal_form__create_date
+#: model:ir.model.fields,field_description:associates.field_associates_share__create_date
+#: model:ir.model.fields,field_description:associates.field_associates_share_type__create_date
+#: model:ir.model.fields,field_description:associates.field_associates_update_associate_wizard__create_date
+#: model:ir.model.fields,field_description:associates.field_associates_update_percentage_wizard__create_date
+#: model:ir.model.fields,field_description:associates.field_distribute_dividends_wizard__create_date
+msgid "Created on"
+msgstr "Créé sur"
+
+#. module: associates
+#: model:ir.actions.act_window,name:associates.action_dashboard_kanban
+#: model:ir.model,name:associates.model_associates_dashboard
+#: model:ir.ui.menu,name:associates.menu_dashboard
+#: model:ir.ui.menu,name:associates.menu_dashboard_settings
+msgid "Dashboard"
+msgstr "Tableau de bord"
+
+#. module: associates
+#: model:ir.actions.act_window,name:associates.action_dashboard_settings
+msgid "Dashboard Settings"
+msgstr "Paramètres du tableau de bord"
+
+#. module: associates
+#: model:ir.model.fields,field_description:associates.field_distribute_dividends_wizard__date
+msgid "Date"
+msgstr "Date"
+
+#. module: associates
+#: model:ir.model.fields,field_description:associates.field_associates_associate__share_type_id
+msgid "Default share type"
+msgstr "Type de part"
+
+#. module: associates
+#: model:ir.model.fields,field_description:associates.field_associates_share_type__description
+msgid "Description"
+msgstr "Description"
+
+#. module: associates
+#: model:ir.model.fields,field_description:associates.field_associates_associate__display_name
+#: model:ir.model.fields,field_description:associates.field_associates_create_shares_wizard__display_name
+#: model:ir.model.fields,field_description:associates.field_associates_dashboard__display_name
+#: model:ir.model.fields,field_description:associates.field_associates_legal_form__display_name
+#: model:ir.model.fields,field_description:associates.field_associates_share_type__display_name
+#: model:ir.model.fields,field_description:associates.field_associates_update_associate_wizard__display_name
+#: model:ir.model.fields,field_description:associates.field_associates_update_percentage_wizard__display_name
+#: model:ir.model.fields,field_description:associates.field_distribute_dividends_wizard__display_name
+msgid "Display Name"
+msgstr "Afficher un nom"
+
+#. module: associates
+#: model_terms:ir.ui.view,arch_db:associates.distribute_dividends_wizard_view
+#: model:associates.dashboard,button_title:associates.associates_dashboard_2
+msgid "Distribute"
+msgstr "Distribuer"
+
+#. module: associates
+#: model:ir.actions.act_window,name:associates.action_distribute_dividends_wizard
+msgid "Distribute Dividends"
+msgstr "Distribuer des dividendes"
+
+#. module: associates
+#: model:ir.model,name:associates.model_distribute_dividends_wizard
+msgid "Distribute Dividends Wizard"
+msgstr "Assistant Distribution de dividendes"
+
+#. module: associates
+#: model:ir.model.fields,field_description:associates.field_associates_associate__dividend_count
+msgid "Dividend Count"
+msgstr "Nombre de dividendes"
+
+#. module: associates
+#: model:ir.actions.act_window,name:associates.action_dividends_form
+#: model:ir.actions.act_window,name:associates.action_view_dividends
+#: model:ir.model.fields,field_description:associates.field_associates_associate__dividend_ids
+#: model:ir.ui.menu,name:associates.menu_dividends
+#: model_terms:ir.ui.view,arch_db:associates.view_associate_form
+#: model:associates.dashboard,name:associates.associates_dashboard_2
+#: model:associates.dashboard,card_title:associates.associates_dashboard_2
+msgid "Dividends"
+msgstr "Dividendes"
+
+#. module: associates
+#: model:ir.model.fields.selection,name:associates.selection__associates_dividend__state__draft
+msgid "Draft"
+msgstr "Brouillon"
+
+#. module: associates
+#: model:ir.model.fields,field_description:associates.field_associates_associate__email
+msgid "Email"
+msgstr "E-mail"
+
+#. module: associates
+#: model:ir.model.fields,field_description:associates.field_associates_associate__membership_end_date
+msgid "End date"
+msgstr "Date de fin"
+
+#. module: associates
+#: model:ir.model.fields.selection,name:associates.selection__associates_associate__gender__female
+msgid "Female"
+msgstr "Femme"
+
+#. module: associates
+#: model:ir.model.fields,field_description:associates.field_associates_share_type__dividend_fixed
+msgid "Fixed dividend"
+msgstr "Dividende fixe"
+
+#. module: associates
+#: model:ir.model.fields,field_description:associates.field_associates_associate__message_follower_ids
+#: model:ir.model.fields,field_description:associates.field_associates_dividend__message_follower_ids
+#: model:ir.model.fields,field_description:associates.field_associates_share__message_follower_ids
+msgid "Followers"
+msgstr "Suiveurs"
+
+#. module: associates
+#: model:ir.model.fields,field_description:associates.field_associates_associate__message_partner_ids
+#: model:ir.model.fields,field_description:associates.field_associates_dividend__message_partner_ids
+#: model:ir.model.fields,field_description:associates.field_associates_share__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Abonnés (Partenaires)"
+
+#. module: associates
+#: model:ir.model.fields.selection,name:associates.selection__associates_associate__type__full_ownership
+msgid "Full ownership"
+msgstr "Pleine propriété"
+
+#. module: associates
+#: model:ir.model.fields,field_description:associates.field_associates_associate__gender
+msgid "Gender"
+msgstr "Genre"
+
+#. module: associates
+#: model:ir.model.fields,field_description:associates.field_associates_associate__has_message
+#: model:ir.model.fields,field_description:associates.field_associates_dividend__has_message
+#: model:ir.model.fields,field_description:associates.field_associates_share__has_message
+msgid "Has Message"
+msgstr "A un message"
+
+#. module: associates
+#: model:ir.model.fields,field_description:associates.field_associates_associate__id
+#: model:ir.model.fields,field_description:associates.field_associates_create_shares_wizard__id
+#: model:ir.model.fields,field_description:associates.field_associates_dashboard__id
+#: model:ir.model.fields,field_description:associates.field_associates_dividend__id
+#: model:ir.model.fields,field_description:associates.field_associates_legal_form__id
+#: model:ir.model.fields,field_description:associates.field_associates_share__id
+#: model:ir.model.fields,field_description:associates.field_associates_share_type__id
+#: model:ir.model.fields,field_description:associates.field_associates_update_associate_wizard__id
+#: model:ir.model.fields,field_description:associates.field_associates_update_percentage_wizard__id
+#: model:ir.model.fields,field_description:associates.field_distribute_dividends_wizard__id
+msgid "ID"
+msgstr "ID"
+
+#. module: associates
+#: model:ir.model.fields,help:associates.field_associates_associate__message_needaction
+#: model:ir.model.fields,help:associates.field_associates_dividend__message_needaction
+#: model:ir.model.fields,help:associates.field_associates_share__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr ""
+"Si cette case est cochée, de nouveaux messages nécessitent votre attention."
+
+#. module: associates
+#: model:ir.model.fields,help:associates.field_associates_associate__message_has_error
+#: model:ir.model.fields,help:associates.field_associates_dividend__message_has_error
+#: model:ir.model.fields,help:associates.field_associates_share__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+"Si cette case est cochée, certains messages présentent une erreur de "
+"livraison."
+
+#. module: associates
+#: model_terms:ir.ui.view,arch_db:associates.view_associate_form
+msgid "In Progress"
+msgstr "En cours"
+
+#. module: associates
+#: model:ir.model.fields.selection,name:associates.selection__associates_associate__state__in_progress
+msgid "In progress"
+msgstr "En cours"
+
+#. module: associates
+#: model:ir.model.fields,field_description:associates.field_associates_associate__message_is_follower
+#: model:ir.model.fields,field_description:associates.field_associates_dividend__message_is_follower
+#: model:ir.model.fields,field_description:associates.field_associates_share__message_is_follower
+msgid "Is Follower"
+msgstr "Est suiveur"
+
+#. module: associates
+#: model:ir.model.fields,field_description:associates.field_associates_associate____last_update
+#: model:ir.model.fields,field_description:associates.field_associates_create_shares_wizard____last_update
+#: model:ir.model.fields,field_description:associates.field_associates_dashboard____last_update
+#: model:ir.model.fields,field_description:associates.field_associates_dividend____last_update
+#: model:ir.model.fields,field_description:associates.field_associates_legal_form____last_update
+#: model:ir.model.fields,field_description:associates.field_associates_share____last_update
+#: model:ir.model.fields,field_description:associates.field_associates_share_type____last_update
+#: model:ir.model.fields,field_description:associates.field_associates_update_associate_wizard____last_update
+#: model:ir.model.fields,field_description:associates.field_associates_update_percentage_wizard____last_update
+#: model:ir.model.fields,field_description:associates.field_distribute_dividends_wizard____last_update
+msgid "Last Modified on"
+msgstr "Dernière modification le"
+
+#. module: associates
+#: model:ir.model.fields,field_description:associates.field_associates_associate__write_uid
+#: model:ir.model.fields,field_description:associates.field_associates_create_shares_wizard__write_uid
+#: model:ir.model.fields,field_description:associates.field_associates_dashboard__write_uid
+#: model:ir.model.fields,field_description:associates.field_associates_dividend__write_uid
+#: model:ir.model.fields,field_description:associates.field_associates_legal_form__write_uid
+#: model:ir.model.fields,field_description:associates.field_associates_share__write_uid
+#: model:ir.model.fields,field_description:associates.field_associates_share_type__write_uid
+#: model:ir.model.fields,field_description:associates.field_associates_update_associate_wizard__write_uid
+#: model:ir.model.fields,field_description:associates.field_associates_update_percentage_wizard__write_uid
+#: model:ir.model.fields,field_description:associates.field_distribute_dividends_wizard__write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: associates
+#: model:ir.model.fields,field_description:associates.field_associates_associate__write_date
+#: model:ir.model.fields,field_description:associates.field_associates_create_shares_wizard__write_date
+#: model:ir.model.fields,field_description:associates.field_associates_dashboard__write_date
+#: model:ir.model.fields,field_description:associates.field_associates_dividend__write_date
+#: model:ir.model.fields,field_description:associates.field_associates_legal_form__write_date
+#: model:ir.model.fields,field_description:associates.field_associates_share__write_date
+#: model:ir.model.fields,field_description:associates.field_associates_share_type__write_date
+#: model:ir.model.fields,field_description:associates.field_associates_update_associate_wizard__write_date
+#: model:ir.model.fields,field_description:associates.field_associates_update_percentage_wizard__write_date
+#: model:ir.model.fields,field_description:associates.field_distribute_dividends_wizard__write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: associates
+#: model:ir.model,name:associates.model_associates_legal_form
+#: model:ir.model.fields,field_description:associates.field_associates_legal_form__name
+#: model:ir.model.fields,field_description:associates.field_res_company__legal_form_id
+msgid "Legal Form"
+msgstr "Forme juridique"
+
+#. module: associates
+#: model:ir.actions.act_window,name:associates.action_associates_legal_form
+#: model:ir.ui.menu,name:associates.menu_associates_legal_form
+msgid "Legal Forms"
+msgstr "Formes juridiques"
+
+#. module: associates
+#: model:ir.model.fields,field_description:associates.field_associates_associate__message_main_attachment_id
+#: model:ir.model.fields,field_description:associates.field_associates_dividend__message_main_attachment_id
+#: model:ir.model.fields,field_description:associates.field_associates_share__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "Pièce jointe principale"
+
+#. module: associates
+#: model:ir.model.fields.selection,name:associates.selection__associates_associate__gender__male
+msgid "Male"
+msgstr "Homme"
+
+#. module: associates
+#: model:ir.model.fields,field_description:associates.field_associates_associate__message_has_error
+#: model:ir.model.fields,field_description:associates.field_associates_dividend__message_has_error
+#: model:ir.model.fields,field_description:associates.field_associates_share__message_has_error
+msgid "Message Delivery error"
+msgstr "Erreur de livraison du message"
+
+#. module: associates
+#: model:ir.model.fields,field_description:associates.field_associates_associate__message_ids
+#: model:ir.model.fields,field_description:associates.field_associates_dividend__message_ids
+#: model:ir.model.fields,field_description:associates.field_associates_share__message_ids
+msgid "Messages"
+msgstr "Messages"
+
+#. module: associates
+#: model:ir.model.fields,field_description:associates.field_associates_associate__name
+#: model:ir.model.fields,field_description:associates.field_associates_dashboard__name
+#: model:ir.model.fields,field_description:associates.field_associates_share_type__name
+#: model_terms:ir.ui.view,arch_db:associates.report_associate_list_qweb
+msgid "Name"
+msgstr "Nom"
+
+#. module: associates
+#: model:ir.model.fields,field_description:associates.field_associates_associate__nationality
+msgid "Nationality"
+msgstr "Nationalité"
+
+#. module: associates
+#: model:ir.model.fields,field_description:associates.field_associates_associate__share_count
+msgid "Nb Shares"
+msgstr "Nb de parts"
+
+#. module: associates
+#. odoo-python
+#: code:addons/associates/models/dividend.py:0
+#: code:addons/associates/models/share.py:0
+#: model:ir.model.fields.selection,name:associates.selection__associates_associate__state__new
+#: model_terms:ir.ui.view,arch_db:associates.view_associate_form
+msgid "New"
+msgstr "Nouveau"
+
+#. module: associates
+#: model:ir.model.fields,field_description:associates.field_associates_update_associate_wizard__new_associate_id
+msgid "New Associate"
+msgstr "Nouvel associé"
+
+#. module: associates
+#: model:ir.model.fields,field_description:associates.field_distribute_dividends_wizard__note
+msgid "Note"
+msgstr "Note"
+
+#. module: associates
+#: model:ir.model.fields,field_description:associates.field_associates_associate__notes
+msgid "Notes"
+msgstr "Remarques"
+
+#. module: associates
+#: model:ir.model.fields,field_description:associates.field_associates_associate__message_needaction_counter
+#: model:ir.model.fields,field_description:associates.field_associates_dividend__message_needaction_counter
+#: model:ir.model.fields,field_description:associates.field_associates_share__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Nombre de parts"
+
+#. module: associates
+#: model:ir.model.fields,field_description:associates.field_associates_create_shares_wizard__share_count
+msgid "Number of Shares"
+msgstr "Nombre de parts"
+
+#. module: associates
+#: model:ir.model.fields,field_description:associates.field_associates_associate__message_has_error_counter
+#: model:ir.model.fields,field_description:associates.field_associates_dividend__message_has_error_counter
+#: model:ir.model.fields,field_description:associates.field_associates_share__message_has_error_counter
+msgid "Number of errors"
+msgstr "Nombre d'erreurs"
+
+#. module: associates
+#: model:ir.model.fields,help:associates.field_associates_associate__message_needaction_counter
+#: model:ir.model.fields,help:associates.field_associates_dividend__message_needaction_counter
+#: model:ir.model.fields,help:associates.field_associates_share__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "Nombre de messages nécessitant une action"
+
+#. module: associates
+#: model:ir.model.fields,help:associates.field_associates_associate__message_has_error_counter
+#: model:ir.model.fields,help:associates.field_associates_dividend__message_has_error_counter
+#: model:ir.model.fields,help:associates.field_associates_share__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Nombre de messages avec erreur de livraison"
+
+#. module: associates
+#: model_terms:ir.ui.view,arch_db:associates.view_share_type_form
+msgid "Options"
+msgstr "Choix"
+
+#. module: associates
+#: model:ir.model.fields.selection,name:associates.selection__associates_associate__gender__other
+msgid "Other"
+msgstr "Autre"
+
+#. module: associates
+#: model:ir.model.fields.selection,name:associates.selection__associates_dividend__state__paid
+msgid "Paid"
+msgstr "Payé"
+
+#. module: associates
+#: model_terms:ir.ui.view,arch_db:associates.view_dividends_form
+msgid "Pay"
+msgstr "Payer"
+
+#. module: associates
+#: model_terms:ir.ui.view,arch_db:associates.view_associate_form
+msgid "Personals informations"
+msgstr "Informations personnelles"
+
+#. module: associates
+#: model:ir.model.fields,field_description:associates.field_associates_associate__phone
+msgid "Phone"
+msgstr "Téléphone"
+
+#. module: associates
+#: model:ir.model.fields,field_description:associates.field_associates_share_type__dividend_priority
+msgid "Priority dividends"
+msgstr "Dividendes prioritaires"
+
+#. module: associates
+#: model:ir.model.fields,field_description:associates.field_associates_associate__partner_id
+msgid "Related Contact"
+msgstr "Contact associé"
+
+#. module: associates
+#: model_terms:ir.ui.view,arch_db:associates.view_dividends_form
+msgid "Return to draft"
+msgstr "Retour au brouillon"
+
+#. module: associates
+#: model:ir.actions.act_window,name:associates.action_associates_share_sequence
+#: model:ir.ui.menu,name:associates.menu_associates_share_sequence
+msgid "Sequences"
+msgstr "Séquences"
+
+#. module: associates
+#: model:ir.ui.menu,name:associates.menu_associates_settings
+msgid "Settings"
+msgstr "Paramètres"
+
+#. module: associates
+#: model:ir.model,name:associates.model_associates_share
+#: model:ir.model.fields,field_description:associates.field_associates_share__display_name
+msgid "Share"
+msgstr "Référence"
+
+#. module: associates
+#: model:ir.model.fields,field_description:associates.field_associates_share__sequence
+msgid "Share Reference"
+msgstr "Par la référence"
+
+#. module: associates
+#: model:ir.model,name:associates.model_associates_share_type
+#: model:ir.model.fields,field_description:associates.field_associates_share__share_type_id
+msgid "Share Type"
+msgstr "Type de part"
+
+#. module: associates
+#: model:ir.model.fields,field_description:associates.field_associates_create_shares_wizard__share_value
+#: model:ir.model.fields,field_description:associates.field_associates_share__value
+msgid "Share Value"
+msgstr "Valeur de la part"
+
+#. module: associates
+#: model:ir.model.fields,field_description:associates.field_associates_associate__share_percentage
+#: model_terms:ir.ui.view,arch_db:associates.report_associate_list_qweb
+msgid "Share percentage"
+msgstr "Pourcentage de parts"
+
+#. module: associates
+#: model:ir.model.fields,field_description:associates.field_associates_create_shares_wizard__share_type_id
+#: model_terms:ir.ui.view,arch_db:associates.report_associate_list_qweb
+msgid "Share type"
+msgstr "Type de part"
+
+#. module: associates
+#: model:ir.actions.act_window,name:associates.action_share_form
+#: model:ir.actions.act_window,name:associates.action_view_shares
+#: model:ir.model.fields,field_description:associates.field_associates_associate__share_ids
+#: model:ir.ui.menu,name:associates.menu_shares
+#: model_terms:ir.ui.view,arch_db:associates.view_associate_form
+#: model:associates.dashboard,name:associates.associates_dashboard_1
+#: model:associates.dashboard,card_title:associates.associates_dashboard_1
+msgid "Shares"
+msgstr "Parts"
+
+#. module: associates
+#: model_terms:ir.ui.view,arch_db:associates.report_associate_list_qweb
+msgid "Shares number"
+msgstr "Nombre de parts"
+
+#. module: associates
+#: model:ir.model.fields,field_description:associates.field_associates_associate__share_numbers
+msgid "Shares numbers"
+msgstr "Nombre de parts"
+
+#. module: associates
+#: model:ir.model.fields,field_description:associates.field_associates_associate__shares_amount
+msgid "Shares total amount"
+msgstr "Montant total des parts"
+
+#. module: associates
+#: model:ir.actions.act_window,name:associates.action_shares_type
+#: model:ir.ui.menu,name:associates.menu_shares_type
+msgid "Shares type"
+msgstr "Type de parts"
+
+#. module: associates
+#: model:ir.model.fields,field_description:associates.field_associates_associate__membership_start_date
+msgid "Start date"
+msgstr "Date de début"
+
+#. module: associates
+#: model:ir.model.fields,field_description:associates.field_associates_associate__state
+#: model:ir.model.fields,field_description:associates.field_associates_dividend__state
+msgid "Status"
+msgstr "Statut"
+
+#. module: associates
+#: model:ir.model.fields,field_description:associates.field_associates_create_shares_wizard__subscription_date
+#: model:ir.model.fields,field_description:associates.field_associates_share__subscription_date
+msgid "Subscription Date"
+msgstr "Date de souscription"
+
+#. module: associates
+#. odoo-python
+#: code:addons/associates/models/wizard_update_percentage.py:0
+msgid "Success"
+msgstr "Succès"
+
+#. module: associates
+#. odoo-python
+#: code:addons/associates/models/wizard_update_percentage.py:0
+msgid "The share percentage has been updated for all associates."
+msgstr "Le pourcentage de parts a été mis à jour pour tous les associés."
+
+#. module: associates
+#: model:ir.model.fields,field_description:associates.field_distribute_dividends_wizard__dividends_total_amount
+msgid "Total Dividends Amount"
+msgstr "Montant total des dividendes"
+
+#. module: associates
+#: model:ir.model.fields,field_description:associates.field_associates_dividend__total_value
+msgid "Total Value"
+msgstr "Valeur totale"
+
+#. module: associates
+#: model:ir.actions.server,name:associates.action_update_associate
+msgid "Transfert shares"
+msgstr "Transférer des parts"
+
+#. module: associates
+#: model:ir.model.fields,field_description:associates.field_associates_associate__type
+#: model_terms:ir.ui.view,arch_db:associates.report_associate_list_qweb
+msgid "Type"
+msgstr "Type"
+
+#. module: associates
+#: model:ir.model,name:associates.model_associates_update_associate_wizard
+msgid "Upadte associate wizard for share tansfert"
+msgstr "Assistant de mise à jour associé pour le transfert de parts"
+
+#. module: associates
+#: model_terms:ir.ui.view,arch_db:associates.view_update_associate_wizard_form
+#: model_terms:ir.ui.view,arch_db:associates.view_update_percentage_wizard_form
+#: model:associates.dashboard,button_title:associates.associates_dashboard_3
+msgid "Update"
+msgstr "Mettre à jour"
+
+#. module: associates
+#: model_terms:ir.ui.view,arch_db:associates.view_update_associate_wizard_form
+msgid "Update Associate"
+msgstr "Mettre à jour l'associé"
+
+#. module: associates
+#: model:ir.model,name:associates.model_associates_update_percentage_wizard
+msgid "Update Percentage Wizard"
+msgstr "Assistant de mise à jour du pourcentage"
+
+#. module: associates
+#: model:ir.actions.act_window,name:associates.action_update_percentage_wizard
+#: model_terms:ir.ui.view,arch_db:associates.view_update_percentage_wizard_form
+msgid "Update Share Percentage"
+msgstr "Mettre à jour le pourcentage de parts"
+
+#. module: associates
+#: model:ir.model.fields,field_description:associates.field_associates_associate__usufructuary_ids
+#: model:ir.model.fields.selection,name:associates.selection__associates_associate__type__usufructuaries
+#: model_terms:ir.ui.view,arch_db:associates.view_associate_form
+msgid "Usufructuaries"
+msgstr "Usufruitiers"
+
+#. module: associates
+#: model_terms:ir.ui.view,arch_db:associates.view_associate_form
+#: model_terms:ir.ui.view,arch_db:associates.view_dividends_form
+msgid "Validate"
+msgstr "Valider"
+
+#. module: associates
+#: model:ir.model.fields.selection,name:associates.selection__associates_associate__state__validated
+#: model:ir.model.fields.selection,name:associates.selection__associates_dividend__state__validated
+msgid "Validated"
+msgstr "Validé"
+
+#. module: associates
+#: model:ir.model.fields,field_description:associates.field_associates_share_type__vote_agm
+msgid "Vote at the Annual General Meeting (AGM)"
+msgstr "Vote à l'assemblée générale annuelle (AGA)"
+
+#. module: associates
+#: model:ir.model.fields,field_description:associates.field_associates_share_type__vote_egm
+msgid "Vote at the Extraordinary General Meeting (EGM)"
+msgstr "Vote à l'Assemblée Générale Extraordinaire (AGE)"
+
+#. module: associates
+#: model:ir.model.fields,field_description:associates.field_associates_associate__city
+msgid "city"
+msgstr "ville"
+
+#. module: associates
+#: model:ir.model,name:associates.model_associates_dividend
+#: model:ir.model.fields,field_description:associates.field_associates_dividend__display_name
+msgid "dividend"
+msgstr "Référence"
+
+#. module: associates
+#: model:ir.model.fields,field_description:associates.field_associates_dividend__number
+msgid "dividend Number"
+msgstr "nombre de dividendes"
+
+#. module: associates
+#: model:ir.model.fields,field_description:associates.field_associates_dividend__sequence
+msgid "dividend Reference"
+msgstr "référence"
+
+#. module: associates
+#: model:ir.model.fields,field_description:associates.field_associates_dividend__value
+msgid "dividend Value"
+msgstr "valeur du dividende"
+
+#. module: associates
+#: model:ir.model.fields,field_description:associates.field_associates_associate__state_id
+msgid "state_id"
+msgstr "state_id"
+
+#. module: associates
+#: model:ir.model.fields,field_description:associates.field_associates_associate__street
+msgid "street"
+msgstr "rue"
+
+#. module: associates
+#: model:ir.model.fields,field_description:associates.field_associates_associate__street2
+msgid "street2"
+msgstr "rue 2"
+
+#. module: associates
+#: model:ir.model.fields,field_description:associates.field_associates_associate__zip
+msgid "zip"
+msgstr "code postale"
+
+#. module: associates
+#: model:associates.dashboard,card_description:associates.associates_dashboard_1
+msgid "Create shares and assign them to a shareholder."
+msgstr "Créez des actions et attribuez-les à un actionnaire."
+
+#. module: associates
+#: model:associates.dashboard,button_title:associates.associates_dashboard_1
+msgid "Create shares"
+msgstr "Créer des actions"
+
+#. module: associates
+#: model:associates.dashboard,card_description:associates.associates_dashboard_2
+msgid "Distribute dividends to your shareholders."
+msgstr "Distribuez des dividendes à vos actionnaires."
+
+#. module: associates
+#: model:associates.dashboard,name:associates.associates_dashboard_3
+#: model:associates.dashboard,card_title:associates.associates_dashboard_3
+msgid "Update share percentage"
+msgstr "Mettre à jour le pourcentage des parts"
+
+#. module: associates
+#: model:associates.dashboard,card_description:associates.associates_dashboard_3
+msgid "Update the share percentage held by each associate."
+msgstr "Mettez à jour le pourcentage des parts détenues par chaque associé."
+
+#. module: associates
+#: model:associates.share.type,name:associates.share_type_common
+msgid "Common Shares"
+msgstr "Actions ordinaires"
+
+#. module: associates
+#: model:associates.share.type,description:associates.share_type_common
+#: model:associates.share.type,description:associates.share_type_absa
+msgid ""
+"Common shares: These are the most common shares that grant their holder "
+"voting rights at general meetings and a right to a portion of the profits "
+"distributed in the form of dividends."
+msgstr ""
+"Les actions ordinaires : ce sont les actions les plus courantes, qui "
+"confèrent à leur détenteur des droits de vote lors des assemblées générales "
+"et un droit à une partie des bénéfices distribués sous forme de dividendes."
+
+#. module: associates
+#: model:associates.share.type,name:associates.share_type_preference
+msgid "Preference Shares"
+msgstr "Actions de préférence"
+
+#. module: associates
+#: model:associates.share.type,description:associates.share_type_preference
+msgid ""
+"Preference shares: These shares grant specific rights to their holders, such "
+"as priority rights on dividends or additional voting rights. These shares "
+"are often issued for individual or institutional investors who want to have "
+"increased control over the company."
+msgstr ""
+"Les actions de préférence : ces actions donnent des droits spécifiques à "
+"leurs détenteurs, tels que des droits de priorité sur les dividendes ou des "
+"droits de vote supplémentaires. Ces actions sont souvent émises pour des "
+"investisseurs particuliers ou institutionnels qui souhaitent avoir un "
+"contrôle accru sur l'entreprise."
+
+#. module: associates
+#: model:associates.share.type,name:associates.share_type_priority
+msgid "Priority Shares"
+msgstr "Actions de priorité"
+
+#. module: associates
+#: model:associates.share.type,description:associates.share_type_priority
+msgid ""
+"Priority shares: These shares grant their holders a right to a portion of "
+"the profits distributed in the form of dividends before common shareholders. "
+"However, these shares usually do not have voting rights."
+msgstr ""
+"Les actions de priorité : ces actions donnent à leurs détenteurs un droit à "
+"une partie des bénéfices distribués sous forme de dividendes avant les "
+"actionnaires ordinaires. Toutefois, ces actions n'ont généralement pas de "
+"droit de vote."
+
+#. module: associates
+#: model:associates.share.type,name:associates.share_type_free
+msgid "Free Shares"
+msgstr "Actions gratuites"
+
+#. module: associates
+#: model:associates.share.type,description:associates.share_type_free
+msgid ""
+"Free shares: These are shares that are issued free of charge to existing "
+"shareholders based on the number of shares they already hold. These shares "
+"cannot be sold for a specified period."
+msgstr ""
+"Les actions gratuites : ce sont des actions qui sont émises gratuitement aux "
+"actionnaires existants en fonction du nombre d'actions qu'ils détiennent "
+"déjà. Ces actions ne peuvent être vendues pendant une période déterminée."
+
+#. module: associates
+#: model:associates.share.type,name:associates.share_type_performance
+msgid "Performance Shares"
+msgstr "Actions de performance"
+
+#. module: associates
+#: model:associates.share.type,description:associates.share_type_performance
+msgid ""
+"Performance shares: These shares are tied to the performance of the company "
+"or specific objectives. If the company meets its objectives, the holders of "
+"these shares may receive dividends or see their value increase."
+msgstr ""
+"Les actions de performance : ces actions sont liées à la performance de "
+"l'entreprise ou à des objectifs spécifiques. Si l'entreprise atteint ses "
+"objectifs, les détenteurs de ces actions peuvent recevoir des dividendes ou "
+"voir leur valeur augmenter."
+
+#. module: associates
+#: model:associates.share.type,name:associates.share_type_absa
+msgid "Shares with Warrants (ABSA)"
+msgstr "Actions à bons de souscription d'actions (ABSA)"
+
+#. module: associates
+#: model:associates.legal_form,name:associates.legal_form_sas
+msgid "SAS (Simplified Joint Stock Company)"
+msgstr "SAS (Société par Actions Simplifiée)"
+
+#. module: associates
+#: model:associates.legal_form,name:associates.legal_form_sarl
+msgid "SARL (Limited Liability Company)"
+msgstr "SARL (Société à Responsabilité Limitée)"
+
+#. module: associates
+#: model:associates.legal_form,name:associates.legal_form_sa
+msgid "SA (Public Limited Company)"
+msgstr "SA (Société Anonyme)"
+
+#. module: associates
+#: model:associates.legal_form,name:associates.legal_form_eurl
+msgid "EURL (Sole Proprietorship with Limited Liability)"
+msgstr "EURL (Entreprise Unipersonnelle à Responsabilité Limitée)"
+
+#. module: associates
+#: model:associates.legal_form,name:associates.legal_form_sas_u
+msgid "SASU (Simplified Joint Stock Company with a Sole Shareholder)"
+msgstr "SASU (Société par Actions Simplifiée Unipersonnelle)"
+
+#. module: associates
+#: model:associates.legal_form,name:associates.legal_form_scop
+msgid "SCOP (Cooperative and Participative Company)"
+msgstr "SCOP (Société Coopérative et Participative)"
+
+#. module: associates
+#: model:associates.legal_form,name:associates.legal_form_scic
+msgid "SCIC (Cooperative Company of Collective Interest)"
+msgstr "SCIC (Société Coopérative d'Intérêt Collectif)"
+
+#. module: associates
+#: model:associates.legal_form,name:associates.legal_form_cooperative
+msgid "Cooperative"
+msgstr "Coopérative"
+
+#. module: associates
+#: model:associates.legal_form,name:associates.legal_form_sci
+msgid "SCI (Real Estate Civil Company)"
+msgstr "SCI (Société Civile Immobilière)"
+
+#. module: associates
+#: model:associates.legal_form,name:associates.uk_sole_trader
+msgid "Sole Trader"
+msgstr "Entrepreneur individuel"
+
+#. module: associates
+#: model:associates.legal_form,name:associates.uk_limited_company
+msgid "Limited Company (Ltd)"
+msgstr "Société à responsabilité limitée (Ltd)"
+
+#. module: associates
+#: model:associates.legal_form,name:associates.uk_public_limited_company
+msgid "Public Limited Company (PLC)"
+msgstr "Société anonyme (PLC)"
+
+#. module: associates
+#: model:associates.legal_form,name:associates.uk_llp
+msgid "Limited Liability Partnership (LLP)"
+msgstr "Société en commandite à responsabilité limitée (LLP)"
+
+#. module: associates
+#: model:associates.legal_form,name:associates.uk_partnership
+msgid "Partnership"
+msgstr "Partenariat"
+
+#. module: associates
+#: model:associates.legal_form,name:associates.uk_community_interest_company
+msgid "Community Interest Company (CIC)"
+msgstr "Société d'intérêt communautaire (CIC)"

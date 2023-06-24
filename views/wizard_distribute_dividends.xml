@@ -6,8 +6,11 @@
         <field name="arch" type="xml">
             <form>
                 <group>
-                    <field name="dividends_total_amount"/>
-                    <field name="note"/>
+                    <field name="share_type_id"/>
+                    <field name="dividends_type_calcul"/>
+                    <field name="dividends_total_amount" attrs="{'invisible': [('dividends_type_calcul', '!=', 'dividends_total_amount')]}"/>
+                    <field name="dividends_amount_by_share" attrs="{'invisible': [('dividends_type_calcul', '!=', 'dividends_amount_by_share')]}"/>
+                    <field name="share_type_description"/>
                     <field name="date"/>
                 </group>
                 <footer>

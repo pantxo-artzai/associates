@@ -1,34 +1,25 @@
-# Odoo Associate and Share Management
+# Associates Management Module for Odoo V16
 
-This is an Odoo project for managing associates and shares in a company. The project includes custom modules for managing associates and shares, as well as custom views for displaying information about associates and shares.
+This module is compatible with Odoo V16 Community and Enterprise editions. It provides an easy and efficient way to manage associates and their shares in a company. The main features of the module include:
 
-## Usage
+## Main Features
 
-The project includes two custom modules:
+1. **Associate Types:** Define various types of associates, such as full ownership, bare ownership, and usufructuaries.
 
-- `custom_associate`: A module for managing associates, including their basic information such as name, email, and phone number.
+2. **Share Types:** Manage different share types, such as common shares, preference shares, priority shares, free shares, performance shares, and shares with warrants (ABSA).
 
-- `custom_share`: A module for managing shares, including the number of shares held by each associate and their purchase price.
+3. **Legal Forms:** Supports various legal forms for France and the United Kingdom. Easily extendable to support more countries.
 
-Both modules include custom views for displaying information about associates and shares, as well as custom wizards for performing actions such as creating new shares or transferring shares between associates.
+4. **Share Management:** Easily manage shares and share percentages for each associate.
 
-## Contributing
+5. **Dividend Distribution:** Distribute dividends to associates based on their share types and associate types. The module offers two calculation methods: total dividends amount and amount by share.
 
-If you find a bug or have a feature request, please open an issue or submit a pull request on the project's GitHub repository.
+## Installation
 
-## License
+To install this module on Odoo V16 Community or Enterprise, follow the standard Odoo module installation process:
 
-This project is licensed under the GNU General Public License v3.0 (GPL-3.0).
+1. Place the module folder in the Odoo addons directory.
+2. Update the module list in the Odoo backend.
+3. Install the module from the module list.
 
-## Acknowledgments
-
-This project was inspired by Odoo's best practices and the work of the Odoo community.
-
-## Resources
-
-- [Odoo Documentation](https://www.odoo.com/documentation)
-- [Odoo Community Association](https://odoo-community.org/)
-- [Odoo Apps Store](https://apps.odoo.com/)
-- [Odoo on GitHub](https://github.com/odoo/odoo) 
-
-You can use this project as a starting point for your own Odoo projects that involve managing associates and shares in a company. Don't forget to update the README file to include information about your project and how to use it. Good luck!
+After installation, the module will be ready to use. You can start managing associates, shares, and dividends in your company.

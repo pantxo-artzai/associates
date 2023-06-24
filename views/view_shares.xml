@@ -6,10 +6,13 @@
             <field name="model">associates.share</field>
             <field name="arch" type="xml">
                 <tree>
-                    <field name="display_name"/>
-                    <field name="value"/>
-                    <field name="subscription_date"/>
+                    <field name="display_name"/>                
                     <field name="associate_id"/>
+                    <field name="usufructuarie_id"/>
+                    <field name="share_type_id"/>
+                    <field name="contribution_type"/>
+                    <field name="subscription_date"/>
+                    <field name="value"/>
                 </tree>
             </field>
         </record>
@@ -28,8 +31,9 @@
                             <field name="value"/>
                             <field name="subscription_date"/>
                             <field name="associate_id"/>
+                            <field name="usufructuarie_id" domain="[('bare_ownership_id', '=', associate_id)]"/>
                             <field name="share_type_id"/>
-                            
+                            <field name="contribution_type"/>
                         </group>
                     </sheet>
                     <div class="oe_chatter">

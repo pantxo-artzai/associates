@@ -4,6 +4,7 @@
         <!-- Menu principal -->
         <record id="menu_associates_management" model="ir.ui.menu">
             <field name="name">Associates</field>
+            <field name="web_icon" eval="'associates,static/description/icon.png'"/>
         </record>
 
         <!-- /// Dashboard /// -->
@@ -27,7 +28,8 @@
         <record id="action_associate_form" model="ir.actions.act_window">
             <field name="name">Associates</field>
             <field name="res_model">associates.associate</field>
-            <field name="view_mode">kanban,tree,form</field>
+            <field name="view_mode">tree,kanban,form,graph,pivot</field>
+            <field name="domain">[('company_id', 'in', context.get('allowed_company_ids', []))]</field>
         </record>
         
         <!-- Menu "Associates" -->
@@ -38,12 +40,31 @@
             <field name="sequence">20</field>
         </record>
 
+        <!-- /// Operations /// -->
+        <!-- Action associée au menu "Operations" -->
+        <record id="action_operation" model="ir.actions.act_window">
+            <field name="name">Operations</field>
+            <field name="res_model">associates.operation</field>
+            <field name="view_mode">tree,form,graph</field>
+            <field name="domain">[('company_id', 'in', context.get('allowed_company_ids', []))]</field>
+
+        </record>
+
+        <!-- Menu "Operations" -->
+        <record id="menu_operation" model="ir.ui.menu">
+            <field name="name">Operations</field>
+            <field name="parent_id" ref="menu_associates_management"/>
+            <field name="action" ref="action_operation" />
+            <field name="sequence">30</field>
+        </record>
+
         <!-- /// Dividends /// -->
         <!-- Action associée au menu "dividends" -->
         <record id="action_dividends_form" model="ir.actions.act_window">
             <field name="name">Dividends</field>
             <field name="res_model">associates.dividend</field>
             <field name="view_mode">tree,form</field>
+            <field name="domain">[('company_id', 'in', context.get('allowed_company_ids', []))]</field>
         </record>
         
         <!-- Menu "dividends" -->
@@ -60,6 +81,7 @@
             <field name="name">Shares</field>
             <field name="res_model">associates.share</field>
             <field name="view_mode">tree,form</field>
+            <field name="domain">[('company_id', 'in', context.get('allowed_company_ids', []))]</field>
         </record>
 
         <!-- Menu "Shares" -->
@@ -128,21 +150,6 @@
             <field name="parent_id" ref="menu_associates_settings"/>
             <field name="action" ref="action_dashboard_settings"/>
             <field name="sequence">40</field>
-        </record>
-
-        <!-- Legal form action -->
-        <record id="action_associates_legal_form" model="ir.actions.act_window">
-            <field name="name">Legal Forms</field>
-            <field name="res_model">associates.legal_form</field>
-            <field name="view_mode">tree,form</field>
-        </record>
-
-        <!-- Leagl form Menu -->
-        <record id="menu_associates_legal_form" model="ir.ui.menu">
-            <field name="name">Legal Forms</field>
-            <field name="parent_id" ref="menu_associates_settings"/>
-            <field name="action" ref="action_associates_legal_form"/>
-            <field name="sequence">20</field>
         </record>
 
     </data>

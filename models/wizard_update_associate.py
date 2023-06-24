@@ -2,6 +2,8 @@ from odoo import api, fields, models
 
 class UpdateAssociateWizard(models.TransientModel):
     _name = "associates.update_associate_wizard"
+    _description = 'Upadte associate wizard for share tansfert'
+
 
     new_associate_id = fields.Many2one("associates.associate", string="New Associate", required=True)
 

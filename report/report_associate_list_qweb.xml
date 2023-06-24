@@ -14,18 +14,12 @@
                                     <tr>
                                         <th>Name</th>
                                         <th>Type</th>
-                                        <th>Share type</th>
-                                        <th>Shares number</th>
-                                        <th>Share percentage</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr t-foreach="docs" t-as="associate">
                                         <td><span t-field="associate.name"/></td>
                                         <td><span t-field="associate.type"/></td>
-                                        <td><span t-field="associate.share_type_id.name"/></td>
-                                        <td><span t-field="associate.share_numbers"/></td>
-                                        <td><span t-field="associate.share_percentage"/></td>
                                     </tr>
                                 </tbody>
                             </table>

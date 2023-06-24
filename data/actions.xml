@@ -9,12 +9,5 @@
             <field name="state">code</field>
             <field name="code">action = records.update_associate()</field>
         </record>
-        <record id="action_update_percentage_wizard" model="ir.actions.act_window">
-            <field name="name">Update Share Percentage</field>
-            <field name="type">ir.actions.act_window</field>
-            <field name="res_model">associates.update_percentage_wizard</field>
-            <field name="view_mode">form</field>
-            <field name="target">new</field>
-        </record>
     </data>
 </odoo>
